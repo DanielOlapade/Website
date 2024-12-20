@@ -30,3 +30,21 @@ setInterval(() => {
     biosensor.src = `Biosensor Project/img (${randomindex}).jpg`;
 }, 2000);
 
+
+const info  = document.getElementById("info");
+const cancel = document.getElementById("cancel")
+const aboutinfo = document.getElementById("aboutinfo")
+const overlay = document.getElementById("overlay")
+info.addEventListener("click", () => {
+    aboutinfo.classList.add("show");
+    overlay.classList.add("show");
+
+});
+cancel.addEventListener("click", () => {
+    aboutinfo.classList.remove("show");
+    overlay.classList.remove("show");
+});
+overlay.addEventListener("click", () => {
+    aboutinfo.classList.remove("show");
+    overlay.classList.remove("show");
+});
