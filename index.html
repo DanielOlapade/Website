@@ -12,10 +12,12 @@
 </head>
 
 <body>
-    <header id="header">
-        <span class="links">Daniel Olapade</span>
-        <div id="right-header">
-            <span id=info class="links">Info</span>
+    <!-- Header section -->
+    <header id="header">   
+        <p class="links">Daniel Olapade</p> 
+        <div id="rightlink">
+            <p id=info class="links">Info</p>
+            <!-- theme -->
             <div id="themeset">
                 <input type="checkbox" id="theme">
                 <label for="theme" class="toggle"></label>
@@ -23,117 +25,106 @@
         </div>
     </header>
 
+    <!-- main body section -->
     <main>
+        <!-- projects -->
         <div id="projects">
-            <div id="col1" class="row">
-                <div class="contents">
-                    <video src="Algorithmic Sports Analysis System/video (1).mp4" autoplay loop muted></video>
-                    <div class="content-texts">
-                        <span>Sports Analysis System</span>
-                        <span>Side Project</span>
-                    </div>
+            <!-- contents -->
+            <div id="algoproj" class="content">
+                <video src="Algorithmic Sports Analysis System/video (1).mp4" autoplay loop muted></video>
+                <div class="content-texts">
+                    <span>Sports Analysis System</span>
+                    <span>Side Project</span>
                 </div>
             </div>
-
-            <div id="col2" class="row">
-                <div class="contents">
-                    <img id="biosensor" src="Biosensor Project/img (1).jpg"> 
-                    <div class="content-texts">
-                        <span>Biosensor Project</span>
-                        <span>U of M Materials Lab</span>
-                    </div>                   
+            <!-- content -->
+            <div class="content">
+                <img id="biosensor" src="Biosensor Project/img (1).jpg"> 
+                <div class="content-texts">
+                    <span>Biosensor Project</span>
+                    <span>U of M Materials Lab</span>
+                </div>                   
+            </div>
+            <!-- content -->
+            <div class="content">
+                <video src="STEM Exhibit/Video (1).mp4" autoplay loop muted></video>
+                <div class="content-texts">
+                    <span>Interactive Stem Exhibit</span>
+                    <span>RAMWC</span>
                 </div>
             </div>
-            
-            <div id="col3" class="row">
-                <div class="contents">
-                    <video src="STEM Exhibit/Video (1).mp4" autoplay loop muted></video>
-                    <div class="content-texts">
-                        <span>Interactive Stem Exhibit</span>
-                        <span>RAMWC</span>
-                    </div>
-                </div>
-            </div>
-
         </div>
 
-        <div id="infos">
-            <div id="overlay"></div>
+        <!-- modals -->
+        <div>
+            <div class="overlay"></div>
 
-            <div id="aboutinfo">
-                <div id="cancel"><i class="fa-solid fa-xmark"></i></div>  
-                <div id="textstable">
-
-                    <div class="infotexts aboutspace">
-                        <p class="heading">About</p>
-                        <div id="bodytexts">
-                            <span class="bodytext"> 
-                                Biosystems Engineering graduate. </span>
-                            <span class="bodytext">  
-                                Specializing in Biomaterials, System Design, and Data Analysis.                    </span>
-                            <span class="bodytext">
-                                Enjoys traveling, exploring cuisines, and creative projects. 
-                            </span>
-                        </div>
-                    </div>     
-                    
-                    <div class="infotextswork aboutspace">
-                        <p class="heading">2024</p>
-                        <div id="bodytexts">
-                            <span class="bodytext"> Fike Canada </span>
-                        </div>
-                        <div id="bodytexts">
-                            <span class="bodytext"> Technician </span>
-                        </div>
-                    </div> 
-    
-                    <div class="infotextswork">
-                        <p class="heading">2024</p>
-                        <div id="bodytexts">
-                            <span class="bodytext"> Engineering Research Assistant</span>
-                        </div>
-                        <div id="bodytexts">
-                            <span class="bodytext">Biosensor Project</span>
-                        </div>
-                    </div>  
-    
-                    <div class="infotextswork">
-                        <p class="heading">2023</p>
-                        <div id="bodytexts">
-                            <span class="bodytext"> Agnora </span>
-                        </div>
-                        <div id="bodytexts">
-                            <span class="bodytext"> Engineering Interhsip (R & D) </span>
-                        </div>
-                    </div>  
-    
-                    <div class="infotextswork">
-                        <p class="heading">2022</p>
-                        <div id="bodytexts">
-                            <span class="bodytext"> Linde Canada </span>
-                        </div>
-                        <div id="bodytexts">
-                            <span class="bodytext"> Engineering Interhsip (Safety Compliance) </span>
-                        </div>
-                    </div> 
-
-                    <div id="contacts" class="aboutspace">
-                        <a href="mailto:olapadedaniel99@gmail.com" target="_blank">Email</a>
-                        <a href="https://www.linkedin.com/in/danielolapade/" target="_blank">LinkedIn</a>
-                        <a href="https://github.com/danielolapade/" target="_blank">Github</a>
-                        <a href="Resume_Daniel_Olapade.pdf" target="_blank">Resume</a>
+            <!-- about modal -->
+            <div id="aboutmodal">
+                <!-- cancel btn -->
+                <div class="cancel">
+                    <i class="fa-solid fa-xmark"></i>
+                </div>  
+                <!-- about section -->
+                <div class= "aboutmodal-content">
+                    <p class="aboutmodal-subheader">About</p>
+                    <div class="aboutmodal-text">
+                        <p>Biosystems Engineering graduate.</p>
+                        <p>Passionate about biomaterials, systems design, and data science.</p>
+                        <p>Experienced in engineering design, R & D, and safety compliance.</p>
+                        <p>Enjoys travelling, exploring new cuisines, and taking on creative side projects.</p>
                     </div>
+                </div>     
+                <!-- experience section -->
+                <div class= "aboutmodal-content">
+                    <p class="aboutmodal-subheader">Experience</p>
+                    <div class="aboutmodal-text">
+                        <div class="aboutmodal-exp-col">
+                            <p>2024</p>
+                            <P>Technician, Fike</p>
+                            <P>Explosion protection systems</p>
+                        </div>
 
+                        <div class="aboutmodal-exp-col">
+                            <p>2024</p>
+                            <P>Eng Research Assistant, U of M</p>
+                            <P>Researched bacteria-detecting biosensors</p>
+                        </div>
+
+                        <div class="aboutmodal-exp-col">
+                            <p>2022</p>
+                            <P>R&D Engineering Intern, Agnora</p>
+                            <P>Designed filtration systems</p>
+                        </div>
+
+                        <div class="aboutmodal-exp-col">
+                            <p>2022</p>
+                            <P>Engineering Intern, Linde Canada</p>
+                            <P>Safety compliance on acetylene cylinders</p>
+                        </div>
+                    </div>
                 </div>
-            </div>  
+                <!-- my contact -->
+                <div class= "contacts">
+                    <a href="mailto:olapadedaniel99@gmail.com" target="_blank">Email</a>
+                    <a href="https://www.linkedin.com/in/danielolapade/" target="_blank">LinkedIn</a>
+                    <a href="https://github.com/danielolapade/" target="_blank">Github</a>
+                    <a href="Resume_Daniel_Olapade.pdf" target="_blank">Résumé</a>
+                </div>  
+            </div>
 
-            <div class="contentinfo">
-                <div id="cancel"><i class="fa-solid fa-xmark"></i></div>  
-                <div class="content title">
+            <!-- algo-modal -->
+            <div id="algoprojmodal" class="projmodals">
+                <!-- cancel btn -->
+                <div class="cancel">
+                    <i class="fa-solid fa-xmark"></i>
+                </div> 
 
-                    <div class="contentintro aboutspace">
-                        <span>Title</span>
-                        <span>About</span>
+                <div class="">
+
+                    <div class="">
+                        <p>Title</p>
+                        <p>About</p>
                     </div>
 
                     <span>

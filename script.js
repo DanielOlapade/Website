@@ -1,3 +1,4 @@
+// theme change
 const theme = document.getElementById("theme");
 theme.addEventListener("change", () => {
     if (theme.checked){
@@ -8,6 +9,8 @@ theme.addEventListener("change", () => {
         localStorage.setItem("theme","whitetheme");
     }
 });
+
+// theme store
 let storedtheme = localStorage.getItem("theme");
 if (storedtheme === "darktheme"){
     document.body.classList.add("darktheme")
@@ -17,6 +20,7 @@ if (storedtheme === "darktheme"){
     theme.checkd = false;
 };
 
+// game section
 const game = document.getElementById("game");
 let title = true;
 setInterval(() => {
@@ -24,6 +28,7 @@ setInterval(() => {
     title = !title;
 }, 3000);
 
+//biosensor random images
 const biosensor = document.getElementById("biosensor");
 setInterval(() => {
     const randomindex = Math.floor(Math.random()*126) + 1;
@@ -31,20 +36,36 @@ setInterval(() => {
 }, 2000);
 
 
+// modal selection
 const info  = document.getElementById("info");
-const cancel = document.getElementById("cancel")
-const aboutinfo = document.getElementById("aboutinfo")
-const overlay = document.getElementById("overlay")
-info.addEventListener("click", () => {
-    aboutinfo.classList.add("show");
-    overlay.classList.add("show");
+const cancel = document.getElementsByClassName("cancel")
+const aboutmodal = document.getElementById("aboutmodal")
+const overlay = document.getElementsByClassName("overlay")
+const algoproj = document.getElementById("algoproj")
+const algoprojmodal = document.getElementById("algoprojmodal")
+const projmodals = document.getElementsByClassName("projmodals")
 
-});
-cancel.addEventListener("click", () => {
-    aboutinfo.classList.remove("show");
-    overlay.classList.remove("show");
-});
-overlay.addEventListener("click", () => {
-    aboutinfo.classList.remove("show");
-    overlay.classList.remove("show");
-});
+
+function modaltoggle(modal,action){
+    if (action === "show"){
+        modal.classList.add("show");
+        Array.from(overlay).forEach(el => el.classList.add("show"));
+
+    } else if (action === "hide") {
+        aboutmodal.classList.remove("show");
+        Array.from(overlay).forEach(el => el.classList.remove("show"));
+        Array.from(projmodals).forEach(el => el.classList.remove("show"));               
+    }
+}
+
+info.addEventListener("click", () => modaltoggle(aboutmodal,"show"));
+algoproj.addEventListener("click", () => modaltoggle(algoprojmodal,"show")); 
+
+Array.from(cancel).forEach(el => el.addEventListener("click", () => {
+    modaltoggle(aboutmodal,"hide");
+    modaltoggle(algoprojmodal,"hide"); 
+}));
+Array.from(overlay).forEach(el => el.addEventListener("click", () => {
+    modaltoggle(aboutmodal,"hide");
+    modaltoggle(algoprojmodal,"hide"); 
+}));
