@@ -115,7 +115,7 @@
                 </div>
             </div>
 
-            <!-- algo-modal -->
+            <!-- Project modal for sports analysis -->
             <div id="algoprojmodal" class="projmodals">
                 <!-- cancel btn -->
                 <div class="cancel">
@@ -148,8 +148,8 @@
                 </div>
 
                 <!-- algo modal banner -->
-                <div class="projmodal-content projmodal-bannercontent">
-                    <img src="https://via.placeholder.com/500x300?text=Banner+Image">
+                <div class="projmodal-content projmodal-bc">
+                    <video src="https://videos.pexels.com/video-files/12471033/12471033-uhd_2560_1440_24fps.mp4" autoplay loop></video>
                 </div>
 
                 <!-- algo modal probs/goals -->
@@ -157,59 +157,169 @@
                     <div>
                         <p class="projmodal-subheader">The Problem</p>
                         <ul>
-                            <li>Inconsistent Results: Reliance on intuition leads to unpredictability</p>
-                            <li>Financial Risks: Poor money management causes losses.</p>
-                            <li>Lack of Automation: Manual analysis is slow and error-prone.</p>
-                            <li>Ethical Concerns: Risks addiction and unregulated influence.</p>
+                            <li>Inconsistent Results: Poor predictions based on subjective intuition </li>
+                            <li>Financial Risks: No standardized strategies to mitigate losses</li>
+                            <li>Lack of Automation: Manual sports analysis is slow and error-prone</li>
+                            <li>Ethical Concerns: Gambling addiction and unregulated influences</li>
                         </ul>
                     </div>
 
                     <div>
                         <p class="projmodal-subheader">Goals</p>
                         <ul>
-                            <li>Automate: End-to-end automation for analysis and wagering.</p>
-                            <li>Enable Sustainable Growth: Apply compounding strategies.</p>
-                            <li>Ensure Scalability: Adapt to other sports or financial markets.</p>
-                            <li>Promote Ethics: Address addiction and regulation.</p>
+                            <li>Automate: End-to-end automation for analysis and wagering</li>
+                            <li>Enable Sustainable Growth: Apply compounding strategies</li>
+                            <li>Ensure Scalability: Adapt to other sports or financial markets</li>
+                            <li>Promote Ethics: Address gambling addiction and regulations</li>
                         </ul>
                     </div>
                 </div>
-
+                
+                <!-- system overview -->
                 <div class="projmodal-content">
-                    <p class="projmodal-header">System Overview</p>
+                    <p class="projmodal-header ">System Overview</p>
+
+                    <!-- stage 1 -->
+                    <div class="algomodal-grid">
+                        <div>
+                            <p class="projmodal-subheader"> Stage 1: Data Scrapping</p>
+                            <div>
+                                <ul>
+                                    <li>System scrapes odds for upcoming games</li>
+                                    <li>Emphasis on low odds with high-probability</li>
+                                    <ul class="minifont">
+                                        <li>Odds Range: (1.05 ~ 95.2%, 1.10 ~ 90.9%)</li>
+                                        <li>Odds Type: Over/Under - goals etc.</li>
+                                        <li>Data Source: OddsPortal, Bet365 etc.</li>
+                                    </ul>
+                                    <li>System scrapes historical game data</li>
+                                    <ul class="minifont">
+                                        <li>Team performance: H2H records, recent form</li>
+                                        <li>Player stats: Shots, substitutions, injuries</li>
+                                        <li>Data Source: ESPN, FootyStats, etc.</li>
+                                    </ul>
+                                    <li>Data cleaning or preprocessing</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <!-- stage 2 -->
+                        <div>
+                            <p class="projmodal-subheader"> Stage 2: AI-Driven Analysis</p>
+                            <div>
+                                <ul>
+                                    <li>AI is trained on data for predictions</li>
+                                    <li>AI tools:</li>
+                                    <ul class="minifont">
+                                        <li>XGBoost: Predicts event probabilities</li>
+                                        <li>Random Forest: Validates and flags outlies</li>
+                                        <li>TensorFlow: Adjusts predictions with live data</li>
+                                    </ul>
+                                    <li>Testing/Validations</li>
+                                    <ul class="minifont">
+                                        <li>3 accounts with different XGBoost setups</li>
+                                        <li>1 account for manual bet placement</li>
+                                        <li>1 control account with no bets placed</li>
+                                    </ul>
+                                    <li>Fall back logic to overide AI decisions</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- stage 3 -->
+                        <div>
+                            <p class="projmodal-subheader"> Stage 3: Wagering</p>
+                            <div>
+                                <ul>
+                                    <li>AI matches predictions to scrapped odds</li>
+                                    <li>Automated bet placement</li>
+                                    <ul class="minifont">
+                                        <li>APIs for integration with betting platforms</li>
+                                        <li>Selenium automates platforms without APIs</li>
+                                    </ul>
+                                    <li>Money Management:</li>
+                                    <ul class="minifont">
+                                        <li>Start with small bets (e.g., $2)</li>
+                                        <li>Apply Kelly Criterion to set bet size</li>
+                                        <li>Daily Cap: 5 bets/day, 1 bet/match</li>
+                                        <li>Compound winnings for exponential returns</li>
+                                    </ul>
+                                    <li>Stop loss for safety measures</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
 
+                <!-- algo modal images of results  -->
                 <div class="projmodal-content">
-                    <p class="projmodal-header">The Good, The Bad, and The Ugly</p>
-
+                    <div class="projmodal-bc projmodal-bcimg-grid">
+                        <img src="https://via.placeholder.com/300x200?text=Placeholder">
+                        <img src="https://via.placeholder.com/300x200?text=Placeholder">
+                        <img src="https://via.placeholder.com/300x200?text=Placeholder">
+                        <img src="https://via.placeholder.com/300x200?text=Placeholder">
+                        <img src="https://via.placeholder.com/300x200?text=Placeholder">
+                        <img src="https://via.placeholder.com/300x200?text=Placeholder">
+                        <img src="https://via.placeholder.com/300x200?text=Placeholder">
+                        <img src="https://via.placeholder.com/300x200?text=Placeholder">
+                    </div>
                 </div>
 
+                <!-- algo - good - bad and ugly -->
+                <div class="projmodal-content">
+                    <p class="projmodal-header">The Good, Bad, and Ugly</p>
+                    <div class="algomodal-grid">
+                        <div>
+                            <p class="projmodal-subheader">The Good</p>
+                            <ul>
+                                <li>AI models can be refined for accuracy</li>
+                                <li>Incoporation of real-time data and NLP</li>
+                                <li>Modular design for new feature integration </li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <p class="projmodal-subheader">The Bad</p>
+                            <ul>
+                                <li>Poor data quality impacts predictions</li>
+                                <li>Automation complexity for Non-API sites</li>
+                                <li>Overfitting of AI models to scenarios</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <p class="projmodal-subheader">The Ugly</p>
+                            <ul>
+                                <li>Risk of encouraging gambling addiction</li>
+                                <li>Varying regional laws can affect use</li>
+                                <li>Down servers, API changes, or code bugs</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ethics and final thoughts-->
                 <div class="projmodal-content projmodal-grid">
                     <div>
                         <p class="projmodal-subheader projmodal-center">Ethical Disclaimer</p>
-                        <p class="projmodal-txtalign">This project is intended for educational purposes only. Users must
-                            ensure compliance with
-                            local gambling laws and engage responsibly. Betting involves risks, including financial loss
-                            and addiction. The system does not promote excessive gambling.
+                        <p class="projmodal-txtalign">T
+                            This project is for educational purposes only and does not promote gambling. Users must
+                            comply with local laws and gamble responsibly, understanding the risks involved.
                         </p>
                     </div>
+
                     <div>
                         <p class="projmodal-subheader projmodal-center">Final Thoughts</p>
-                        <p class="projmodal-txtalign"> This project highlights the potential of AI and data-driven
-                            strategies in financial systems.
-                            By focusing on small sustainable outcomes, risk management, and while
-                            understanding the uncertainties involved, users engage responsibly,to create a scalable
-                            system to make $10,737,418.24, more or less.
+                        <p class="projmodal-txtalign">
+                            This project demonstrates data-driven strategies in financial markets, focusing on
+                            high-probability outcomes, risk management to help mitigate gambling addiction and aim for
+                            $10,737,418.24.
                         </p>
                     </div>
-
                 </div>
 
-                <div class="projmodal-content projmodal-grid">
-                    <p class="projmodal-subheader projmodal-center">Team: Me (Solo)</p>
-                    <p class="projmodal-subheader projmodal-center">Duration: 2 Months</p>
-                </div>
-
+                <!-- footer for algo -->
                 <div class="projmodal-content projmodal-center  projmodal-footer">
                     <p>For the code, files, and setup instructions, please visit the project repository on <span>
                             <a class="github" href="https://github.com/danielolapade/"

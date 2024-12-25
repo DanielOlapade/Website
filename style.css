@@ -1,36 +1,46 @@
 /* Root Variables */
 :root {
     --col1: white;
-    --col2: lightgray;
+    --col2: rgba(211, 211, 211, 0.219);
     --col3: dimgray;
     --col4: black;
     font-size: 16px;
 }
 
+body.darktheme {
+    --col4: white;
+    --col3: dimgray;
+    --col2: dimgray;
+    --col1: black;
+}
+
 /* General Styles */
 body {
-    letter-spacing: 0.02rem;
     font-family: "Inter", serif;
     font-weight: 350;
     background: var(--col1);
     color: var(--col4);
+    letter-spacing: 0.02rem;
     overflow-x: hidden;
-    overflow-y: auto;
     scroll-behavior: smooth;
-    transition: background 0.5s ease-in-out;
+    transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
     scrollbar-width: none;
-}
-
-body.darktheme {
-    --col4: white;
-    --col3: lightgray;
-    --col2: dimgray;
-    --col1: black;
 }
 
 a {
     text-decoration: none;
     color: var(--col4);
+    font-weight: 450;
+}
+
+li {
+    margin-top: 0.5rem;
+    margin-left: -0.5rem;
+}
+
+.minifont {
+    font-size: 0.85rem;
+    color: var(--col3);
 }
 
 /* Header Styles */
@@ -46,6 +56,7 @@ header {
     display: inline-flex;
     align-items: center;
     gap: 1rem;
+
 }
 
 .links {
@@ -139,7 +150,6 @@ header {
 
 .content:hover {
     transform: scale(0.985);
-    /* box-shadow: 0 4px 10px hsla(0, 0%, 0%, 0.5); */
 }
 
 .content:active {
@@ -253,7 +263,6 @@ header {
 .github {
     position: relative;
     display: inline-block;
-    transition: font-weight 0.4s ease-in-out;
 }
 
 .contacts a::after,
@@ -269,17 +278,8 @@ header {
     transition: font-weight 0.4s ease-in-out, width 0.4s ease-in-out;
 }
 
-.github::after {
-    background-color: red;
-}
-
-.github {
-    color: red;
-}
-
 .contacts a:hover,
 .github:hover {
-    font-weight: 550;
     width: 100;
 }
 
@@ -315,7 +315,6 @@ header {
     margin-top: 3rem;
     height: auto;
     align-self: center;
-    /* border: 1px red solid; */
 }
 
 .projmodal-titabt {
@@ -335,17 +334,33 @@ header {
     font-weight: 500;
 }
 
-.projmodal-bannercontent img {
+.projmodal-bc video {
+    width: 100%;
+    height: 32rem;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 0.5rem;
+}
+
+.projmodal-bc img {
     width: 100%;
     height: 30rem;
     object-fit: cover;
     object-position: center;
+    border-radius: 0.5rem;
+}
+
+.projmodal-bcimg-grid{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    gap: 2rem;
 }
 
 .projmodal-subheader {
-    font-size: 2rem;
+    font-size: 1.5rem;
     margin: 0;
-    font-weight: 600;
+    font-weight: 500;
 }
 
 .projmodal-header {
@@ -361,29 +376,43 @@ header {
 .projmodal-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 10%;
+    gap: 10rem;
+}
+
+.projmodal-grid div {
+    background-color: var(--col2);
+    padding: 1rem;
+    border-radius: 0.5rem;
 }
 
 .projmodal-center {
     display: flex;
     align-items: center;
     justify-content: center;
+    box-sizing: border-box;
 }
 
 .projmodal-txtalign {
     text-align: center;
 }
 
-
-
-
-
 .projmodal-footer {
-    margin: 3rem;
+    margin-bottom: 3rem;
 }
 
-/* algoprojmodal */
+/* algo -modal */
+.algomodal-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 1rem;
+    gap: 2rem;
+}
 
+.algomodal-grid > div {
+    background-color: var(--col2);
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
 
 /* modals and overlay visibility */
 .overlay.show,
@@ -404,7 +433,6 @@ footer {
     justify-content: center;
     align-items: center;
     font-size: 1.2rem;
-    margin-bottom: 2rem;
 }
 
 #backup a {
