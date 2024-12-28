@@ -1,21 +1,32 @@
 /* Root Variables */
 :root {
-    --col1: white;
-    --col2: rgba(211, 211, 211, 0.219);
-    --col3: dimgray;
-    --col4: black;
-    font-size: 16px;
+    --col1: rgb(255, 255, 255);
+    --col2: rgb(248, 248, 248);
+    --col3: rgb(87, 87, 87);
+    --col4: rgb(0, 0, 0);
+    --col5: rgba(0, 0, 0, 0.60);
+    font-size: 15px;
 }
 
 body.darktheme {
-    --col4: white;
-    --col3: dimgray;
-    --col2: dimgray;
-    --col1: black;
+    --col5: rgba(30, 30, 30, 0.70);
+    --col4: rgb(255, 255, 255);
+    --col3: rgb(176, 176, 176);
+    --col2: rgb(14, 14, 14);
+    --col1: rgb(0, 0, 0);
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    overflow: auto;
 }
 
 /* General Styles */
 body {
+    display: flex;
+    flex-direction: column;
     font-family: "Inter", serif;
     font-weight: 350;
     background: var(--col1);
@@ -25,11 +36,17 @@ body {
     scroll-behavior: smooth;
     transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
     scrollbar-width: none;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+main {
+    flex-grow: 1;
 }
 
 a {
     text-decoration: none;
-    color: var(--col4);
+    color: var(--col3);
     font-weight: 450;
 }
 
@@ -39,15 +56,17 @@ li {
 }
 
 .minifont {
-    font-size: 0.85rem;
+    font-size: 0.88rem;
     color: var(--col3);
 }
 
 /* Header Styles */
 header {
+    margin-top: 0.5rem;
     height: 2rem;
     padding: 0 0.2rem;
     display: flex;
+    font-size: 0.85rem;
     justify-content: space-between;
     align-items: center;
 }
@@ -61,11 +80,11 @@ header {
 
 .links {
     cursor: pointer;
-    transition: font-weight 0.4s ease-in-out;
+    transition: font-weight 0.5s ease-in-out;
 }
 
 .links:hover {
-    font-weight: 550;
+    font-weight: 600;
 }
 
 /* theme */
@@ -76,12 +95,12 @@ header {
 .toggle {
     display: flex;
     position: relative;
-    width: 2rem;
+    width: 1.7rem;
     height: 1rem;
     background-color: var(--col3);
     border-radius: 1rem;
     cursor: pointer;
-    transition: transform 0.4s ease-in-out;
+    transition: transform 0.5s ease-in-out;
 }
 
 .toggle:hover {
@@ -97,20 +116,33 @@ header {
     left: 0.1rem;
     background: var(--col1);
     border-radius: 50%;
-    transition: transform 0.4s cubic-bezier(0.85, 0.05, 0.18, 1.35);
+    transition: transform 0.5s cubic-bezier(0.85, 0.05, 0.18, 1.35);
 }
 
 #theme:checked~.toggle::after {
-    transform: translateX(1rem);
+    transform: translateX(0.7rem);
+}
+
+/* intro */
+.intro {
+    font-weight: 600;
+    font-size: 3.5rem;
+    margin-top: 10rem;
+    margin-bottom: 7rem;
+    color: var(--col3);
+    opacity: 0;
+    align-items: center;
+    animation: slideup 1s ease-in-out forwards;
 }
 
 /* Projects Section */
 #projects {
-    margin-top: 0.5rem;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: auto;
     gap: 0.5rem;
+    opacity: 0;
+    animation: slideup 0.8s 0.5s ease-in-out forwards;
 }
 
 /* content */
@@ -120,13 +152,14 @@ header {
     cursor: pointer;
     border-radius: 0.5rem;
     overflow: hidden;
-    transition: transform 0.4s ease-in-out;
+    height: 19rem;
+    transition: transform 0.5s ease-in-out;
 }
 
 .content video,
 .content img {
     width: 100%;
-    height: 18.75rem;
+    height: 100%;
     object-fit: cover;
     object-position: center;
 }
@@ -139,11 +172,11 @@ header {
     bottom: 0.5rem;
     font-size: 0.8rem;
     opacity: 0;
-    transition: opacity 0.4s ease-in-out;
+    transition: opacity 0.5s ease-in-out;
 }
 
 .content-texts span {
-    padding: 0.5rem;
+    padding: 0.4rem;
     border-radius: 0.5rem;
     background: var(--col1);
 }
@@ -168,7 +201,7 @@ header {
     height: 100%;
     width: 100%;
     opacity: 0;
-    background: hsla(0, 0%, 0%, 0.8);
+    background: var(--col5);
     z-index: 1;
     visibility: hidden;
     transition: opacity 0.4s ease-in-out;
@@ -185,8 +218,9 @@ header {
     cursor: pointer;
     font-size: 1rem;
     color: var(--col4);
-    transition: transform 0.4s ease-in-out;
+    transition: transform 0.5s ease-in-out;
 }
+
 
 .cancel:hover {
     transform: scale(1.1);
@@ -208,7 +242,7 @@ header {
     border-radius: 0.5rem;
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.4s ease-in-out;
+    transition: opacity 0.5s ease-in-out;
     overflow-x: hidden;
     overflow-y: auto;
     scrollbar-width: none;
@@ -225,7 +259,7 @@ header {
 
 .aboutmodal-subheader {
     margin: 0;
-    font-weight: 550;
+    font-weight: 600;
 }
 
 .aboutmodal-text {
@@ -260,32 +294,48 @@ header {
 }
 
 .contacts a,
-.github {
+.modallinks {
     position: relative;
     display: inline-block;
 }
 
 .contacts a::after,
-.github::after {
+.modallinks::after {
     content: "";
     position: absolute;
     bottom: -0.125rem;
     left: 0;
     width: 0;
-    background-color: var(--col4);
+    background-color: var(--col3);
     height: 0.125rem;
     display: inline-block;
-    transition: font-weight 0.4s ease-in-out, width 0.4s ease-in-out;
+    transition: font-weight 0.5s ease-in-out, width 0.8s ease-in-out;
 }
 
 .contacts a:hover,
-.github:hover {
+.modallinks:hover {
     width: 100;
 }
 
 .contacts a:hover::after,
-.github:hover::after {
+.modallinks:hover::after {
     width: 100%;
+}
+
+.view{
+    opacity: 0;
+    transform: translateY(2rem);
+    transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+}
+
+.inview{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.outview-top {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* projmodal */
@@ -304,10 +354,11 @@ header {
     border-radius: 0.5rem;
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.4s ease-in-out;
+    transition: opacity 0.5s ease-in-out;
     overflow-x: hidden;
     overflow-y: auto;
     scrollbar-width: none;
+    scroll-behavior: smooth;
 }
 
 .projmodal-content {
@@ -329,9 +380,15 @@ header {
 }
 
 .projmodal-title {
-    font-size: 5rem;
+    font-size: 4.3rem;
     margin: 0;
     font-weight: 500;
+}
+
+.projmodaldur{
+    display: flex;
+    justify-content: space-between;
+    width: 100;
 }
 
 .projmodal-bc video {
@@ -350,12 +407,13 @@ header {
     border-radius: 0.5rem;
 }
 
-.projmodal-bcimg-grid{
+.projmodal-bcimg-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: auto;
     gap: 2rem;
 }
+
 
 .projmodal-subheader {
     font-size: 1.5rem;
@@ -398,34 +456,99 @@ header {
 
 .projmodal-footer {
     margin-bottom: 3rem;
+    margin-top: -1rem;
 }
 
-/* algo -modal */
-.algomodal-grid {
+.threemodal-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     margin-top: 1rem;
     gap: 2rem;
 }
 
-.algomodal-grid > div {
+.threemodal-grid>div {
     background-color: var(--col2);
     padding: 1rem;
     border-radius: 0.5rem;
 }
 
+/* bio project */
+.bioprojimgs-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: auto;
+    gap: 2rem;
+}
+
+.bioprojimgscont {
+    display: flex;
+    position: relative;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    height: 13rem;
+    transition: box-shadow 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.bioprojimgscont img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.5s ease-in-out;
+    z-index: -1;
+}
+
+.bioprojimgsdes {
+    position: absolute;
+    display: inline-flex;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0.5rem;
+    width: auto;
+    white-space: nowrap;
+    text-align: center;
+    font-size: 0.8rem;
+    line-height: normal;
+    opacity: 0;
+    padding: 0.4rem;
+    border-radius: 0.5rem;
+    background: var(--col1);
+    transition: opacity 0.5s ease-in-out;
+}
+
+.bioprojimgscont:hover {
+    box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.25)
+}
+
+.bioprojimgscont:hover .bioprojimgsdes {
+    opacity: 1;
+}
+
+.bioprojimgscont:active {
+    transform: scale(1.5);
+    z-index: 2;
+}
+
+.bioprojimgscont:active .bioprojimgsdes {
+    opacity: 0;
+}
+
 /* modals and overlay visibility */
 .overlay.show,
 #aboutmodal.show,
-#algoprojmodal.show {
+#algoprojmodal.show,
+#bioprojmodal.show {
     opacity: 1;
     visibility: visible;
 }
 
 /* Footer Section */
 footer {
-    margin-top: 15rem;
-    padding: 0.5rem;
+    opacity: 0;
+    margin-bottom: 0.5rem;
+    font-size: 0.8rem;
+    animation: opacity 0.7s 0.8s ease-in-out forwards;
 }
 
 #backup {
@@ -433,10 +556,15 @@ footer {
     justify-content: center;
     align-items: center;
     font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.backup-opacity{
+    visibility: hidden;
 }
 
 #backup a {
-    transition: transform 0.4s ease;
+    transition: transform 0.5s ease;
 }
 
 #backup a:hover {
@@ -450,9 +578,32 @@ footer {
 
 #game {
     cursor: pointer;
-    transition: font-weight 0.4s ease-in-out;
+    transition: font-weight 0.5s ease-in-out;
 }
 
 #game:hover {
-    font-weight: 550;
+    font-weight: 600;
+}
+
+
+@keyframes slideup {
+    from {
+        transform: translateY(4rem);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0rem);
+        opacity: 1;
+    }
+}
+
+@keyframes opacity {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 100;
+    }
 }
