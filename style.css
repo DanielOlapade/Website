@@ -1,4 +1,3 @@
-/* Root Variables */
 :root {
     --col1: rgb(255, 255, 255);
     --col2: rgb(248, 248, 248);
@@ -23,7 +22,6 @@ body {
     overflow: auto;
 }
 
-/* General Styles */
 body {
     display: flex;
     flex-direction: column;
@@ -55,12 +53,11 @@ li {
     margin-left: -0.5rem;
 }
 
-.minifont {
+.subList {
     font-size: 0.88rem;
     color: var(--col3);
 }
 
-/* Header Styles */
 header {
     margin-top: 0.5rem;
     height: 2rem;
@@ -71,28 +68,27 @@ header {
     align-items: center;
 }
 
-#rightlink {
+#headerInfo {
     display: inline-flex;
     align-items: center;
     gap: 1rem;
 
 }
 
-.links {
+.headerContent {
     cursor: pointer;
     transition: font-weight 0.5s ease-in-out;
 }
 
-.links:hover {
+.headerContent:hover {
     font-weight: 600;
 }
 
-/* theme */
 #theme {
     display: none;
 }
 
-.toggle {
+.themeToggleBtn {
     display: flex;
     position: relative;
     width: 1.7rem;
@@ -103,11 +99,11 @@ header {
     transition: transform 0.5s ease-in-out;
 }
 
-.toggle:hover {
+.themeToggleBtn:hover {
     transform: scale(1.05);
 }
 
-.toggle::after {
+.themeToggleBtn::after {
     content: "";
     position: absolute;
     height: 0.8rem;
@@ -119,11 +115,10 @@ header {
     transition: transform 0.5s cubic-bezier(0.85, 0.05, 0.18, 1.35);
 }
 
-#theme:checked~.toggle::after {
+#theme:checked~.themeToggleBtn::after {
     transform: translateX(0.7rem);
 }
 
-/* intro */
 .intro {
     font-weight: 600;
     font-size: 3.5rem;
@@ -135,7 +130,6 @@ header {
     animation: slideup 1s ease-in-out forwards;
 }
 
-/* Projects Section */
 #projects {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -145,8 +139,7 @@ header {
     animation: slideup 0.8s 0.5s ease-in-out forwards;
 }
 
-/* content */
-.content {
+.projectContent {
     display: flex;
     position: relative;
     cursor: pointer;
@@ -156,15 +149,15 @@ header {
     transition: transform 0.5s ease-in-out;
 }
 
-.content video,
-.content img {
+.projectContent video,
+.projectContent img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center;
 }
 
-.content-texts {
+.projectContentText {
     position: absolute;
     display: flex;
     gap: 0.3rem;
@@ -175,25 +168,25 @@ header {
     transition: opacity 0.5s ease-in-out;
 }
 
-.content-texts span {
+.projectContentText span {
     padding: 0.4rem;
     border-radius: 0.5rem;
     background: var(--col1);
 }
 
-.content:hover {
+.projectContent:hover {
     transform: scale(0.985);
 }
 
-.content:active {
+.projectContent:active {
     transform: scale(0.965);
 }
 
-.content:hover .content-texts {
+.projectContent:hover .projectContentText {
     opacity: 1;
 }
 
-/* Overlay and cancel */
+/* Overlay and cancelBtn */
 .overlay {
     position: fixed;
     top: 0;
@@ -207,7 +200,7 @@ header {
     transition: opacity 0.4s ease-in-out;
 }
 
-.cancel {
+.cancelBtn {
     position: sticky;
     width: 1rem;
     height: 1rem;
@@ -218,16 +211,17 @@ header {
     cursor: pointer;
     font-size: 1rem;
     color: var(--col4);
-    transition: transform 0.5s ease-in-out;
+    transition: transform 0.5s ease-in-out, color 0.5s ease-in;
 }
 
 
-.cancel:hover {
+.cancelBtn:hover {
     transform: scale(1.1);
+    color: red;
 }
 
-/* aboutmodal - info */
-#aboutmodal {
+/* aboutModal - info */
+#aboutModal {
     position: fixed;
     width: 70%;
     height: auto;
@@ -248,7 +242,7 @@ header {
     scrollbar-width: none;
 }
 
-.aboutmodal-content {
+.aboutModalContainer {
     display: grid;
     overflow: hidden;
     grid-template-columns: 20% 80%;
@@ -257,23 +251,23 @@ header {
     align-self: center;
 }
 
-.aboutmodal-subheader {
+.aboutModalHeader {
     margin: 0;
     font-weight: 600;
 }
 
-.aboutmodal-text {
+.aboutModalContent {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
 }
 
-.aboutmodal-text p {
+.aboutModalContent p {
     margin: 0;
     display: flex;
 }
 
-.aboutmodal-exp-col {
+.aboutModalColumnV1 {
     margin: 0;
     display: grid;
     grid-template-columns: 10% 40% 50%;
@@ -281,7 +275,7 @@ header {
     grid-template-rows: auto;
 }
 
-.aboutmodal-exp-col p {
+.aboutModalColumnV1 p {
     margin: 0;
 }
 
@@ -294,13 +288,13 @@ header {
 }
 
 .contacts a,
-.modallinks {
+.modalHeaderContent {
     position: relative;
     display: inline-block;
 }
 
 .contacts a::after,
-.modallinks::after {
+.modalHeaderContent::after {
     content: "";
     position: absolute;
     bottom: -0.125rem;
@@ -313,33 +307,33 @@ header {
 }
 
 .contacts a:hover,
-.modallinks:hover {
+.modalHeaderContent:hover {
     width: 100;
 }
 
 .contacts a:hover::after,
-.modallinks:hover::after {
+.modalHeaderContent:hover::after {
     width: 100%;
 }
 
-.view{
+.view {
     opacity: 0;
     transform: translateY(2rem);
     transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
 }
 
-.inview{
+.inview {
     opacity: 1;
     transform: translateY(0);
 }
 
-.outview-top {
+.outviewTop {
     opacity: 1;
     transform: translateY(0);
 }
 
 /* projmodal */
-.projmodals {
+.projectModal {
     position: fixed;
     width: calc(100% - 1rem);
     height: calc(100% - 3.5rem);
@@ -361,37 +355,51 @@ header {
     scroll-behavior: smooth;
 }
 
-.projmodal-content {
+.projectModalContainer {
     width: calc(100% - 4rem);
     margin-top: 3rem;
     height: auto;
     align-self: center;
 }
 
-.projmodal-titabt {
-    gap: 10%;
+.modalTitleContainerV1 {
+    gap: 2rem;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     align-items: last baseline;
 }
 
-.projmodal-about {
+.modalTitleContainerV2 {
+    gap: 10%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.projectModalAbout {
     margin: 0;
 }
 
-.projmodal-title {
+.projectModalTitle {
     font-size: 4.3rem;
     margin: 0;
     font-weight: 500;
 }
 
-.projmodaldur{
+.modalRoleDuration {
     display: flex;
     justify-content: space-between;
-    width: 100;
+    width: 100%;
 }
 
-.projmodal-bc video {
+.modalAcknowledgement {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    width: 100%;
+}
+
+.projectModalBannerV1 video,
+.projectModalBannerV1 img {
     width: 100%;
     height: 32rem;
     object-fit: cover;
@@ -399,7 +407,7 @@ header {
     border-radius: 0.5rem;
 }
 
-.projmodal-bc img {
+.analysisProjectImgs img {
     width: 100%;
     height: 30rem;
     object-fit: cover;
@@ -407,21 +415,50 @@ header {
     border-radius: 0.5rem;
 }
 
-.projmodal-bcimg-grid {
+.analysisProjectImgsGrid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: auto;
     gap: 2rem;
 }
 
+.exhibitModalGridV1 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem; 
+}
 
-.projmodal-subheader {
+.exhibitModalGridV1 div{
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+.exhibitBannerLeft{
+    display: flex;
+    justify-content: center;
+
+
+}
+.exhibitBannerRight{ 
+
+    
+}
+.exhibitBannerBtn i {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    background: var(--col3);
+}
+
+
+
+.projectModalSubHeader {
     font-size: 1.5rem;
     margin: 0;
     font-weight: 500;
 }
 
-.projmodal-header {
+.projectModalHeader {
     display: flex;
     font-size: 3rem;
     margin: 0;
@@ -431,56 +468,55 @@ header {
     align-items: center;
 }
 
-.projmodal-grid {
+.projectModalGrid2 {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 10rem;
+    gap: 2rem;
 }
 
-.projmodal-grid div {
+.projectModalGrid2 div {
     background-color: var(--col2);
     padding: 1rem;
     border-radius: 0.5rem;
 }
 
-.projmodal-center {
+.projectModalCenter {
     display: flex;
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
 }
 
-.projmodal-txtalign {
+.projectModalTxtAlign {
     text-align: center;
 }
 
-.projmodal-footer {
+.projectModalFooter {
     margin-bottom: 3rem;
     margin-top: -1rem;
 }
 
-.threemodal-grid {
+.projectModalGrid3 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     margin-top: 1rem;
     gap: 2rem;
 }
 
-.threemodal-grid>div {
+.projectModalGrid3>div {
     background-color: var(--col2);
     padding: 1rem;
     border-radius: 0.5rem;
 }
 
-/* bio project */
-.bioprojimgs-grid {
+.projectModalImgsV1 {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: auto;
     gap: 2rem;
 }
 
-.bioprojimgscont {
+.modalImgContianer {
     display: flex;
     position: relative;
     cursor: pointer;
@@ -490,7 +526,7 @@ header {
     transition: box-shadow 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
 
-.bioprojimgscont img {
+.modalImgContianer img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -499,7 +535,7 @@ header {
     z-index: -1;
 }
 
-.bioprojimgsdes {
+.modalImgDescription {
     position: absolute;
     display: inline-flex;
     left: 50%;
@@ -517,33 +553,32 @@ header {
     transition: opacity 0.5s ease-in-out;
 }
 
-.bioprojimgscont:hover {
+.modalImgContianer:hover {
     box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.25)
 }
 
-.bioprojimgscont:hover .bioprojimgsdes {
+.modalImgContianer:hover .modalImgDescription {
     opacity: 1;
 }
 
-.bioprojimgscont:active {
+.modalImgContianer:active {
     transform: scale(1.5);
     z-index: 2;
 }
 
-.bioprojimgscont:active .bioprojimgsdes {
+.modalImgContianer:active .modalImgDescription {
     opacity: 0;
 }
 
-/* modals and overlay visibility */
 .overlay.show,
-#aboutmodal.show,
-#algoprojmodal.show,
-#bioprojmodal.show {
+#aboutModal.show,
+#analysisProjectModal.show,
+#biosensorProjectmodal.show,
+#exhibitModal.show {
     opacity: 1;
     visibility: visible;
 }
 
-/* Footer Section */
 footer {
     opacity: 0;
     margin-bottom: 0.5rem;
@@ -559,7 +594,7 @@ footer {
     margin-bottom: 1rem;
 }
 
-.backup-opacity{
+.backup-opacity {
     visibility: hidden;
 }
 
@@ -571,17 +606,17 @@ footer {
     transform: scale(1.1);
 }
 
-#extras {
+#footer {
     display: flex;
     justify-content: space-between;
 }
 
-#game {
+#playGame {
     cursor: pointer;
     transition: font-weight 0.5s ease-in-out;
 }
 
-#game:hover {
+#playGame:hover {
     font-weight: 600;
 }
 

@@ -14,51 +14,51 @@
 </head>
 
 <body>
-    <!-- Header section -->
+    <!-- header -->
     <header id="header">
-        <p class="links">DANIEL OLAPADE</p>
-        <div id="rightlink">
-            <p id=info class="links">INFO</p>
-            <!-- theme -->
-            <div id="themeset">
+        <p class="headerContent">DANIEL OLAPADE</p>
+        <div id="headerInfo">
+            <p id=info class="headerContent">INFO</p>
+            <div id="themeContainer">
                 <input type="checkbox" id="theme">
-                <label for="theme" class="toggle"></label>
+                <label for="theme" class="themeToggleBtn"></label>
             </div>
         </div>
     </header>
 
-    <!-- main body section -->
+
     <main>
-        <!-- intro section -->
+        <!-- intro -->
         <div class="intro">
-            Hi, i'm Daniel.
+            <p>Hi, i'm Daniel.</p>
+            <p id="meFacts"></p>
         </div>
 
-        <!-- projects -->
+        <!-- project -->
         <div id="projects" class="view">
-            <!-- contents -->
-            <div id="algoproj" class="content">
-                <video src="Algorithmic Sports Analysis System/video (1).mp4" autoplay loop muted disablePictureInPicture></video>
-                <div class="content-texts">
+            <div id="analysisProject" class="projectContent">
+                <video src="Sports Analysis Project/video (1).mp4" autoplay loop muted disablePictureInPicture></video>
+                <div class="projectContentText">
                     <span>Sports Analysis System</span>
                     <span>Case Study</span>
                     <span>24'</span>
                 </div>
             </div>
-            <!-- content -->
-            <div class="content">
-                <img id="bioproj" src="Biosensor Project/img (1).jpg">
-                <div class="content-texts">
+
+            <div class="projectContent">
+                <img id="biosensorProject" src="Biosensor Project/img (1).jpg">
+                <div class="projectContentText">
                     <span>Biosensor Project</span>
                     <span>U of M Materials Lab</span>
                     <span>24'</span>
                 </div>
             </div>
-            <!-- content -->
-            <div class="content">
-                <video src="STEM Exhibit/Video (1).mp4" autoplay loop muted disablePictureInPicture></video>
-                <div class="content-texts">
-                    <span>Interactive Stem Exhibit</span>
+
+            <div class="projectContent">
+                <video id="exhibitProject" src="Exhibit Project/Video (1).mp4" autoplay loop muted
+                    disablePictureInPicture></video>
+                <div class="projectContentText">
+                    <span>Interactive Exhibit Project</span>
                     <span>RAMWC</span>
                     <span>24'</span>
                 </div>
@@ -70,51 +70,47 @@
             <div class="overlay"></div>
 
             <!-- about modal -->
-            <div id="aboutmodal">
-                <!-- cancel btn -->
-                <div class="cancel">
-                    <i class="fa-solid fa-xmark"></i>
-                </div>
-                <!-- about section -->
-                <div class="aboutmodal-content">
-                    <p class="aboutmodal-subheader">About</p>
-                    <div class="aboutmodal-text">
+            <div id="aboutModal">
+                <div class="cancelBtn"><i class="fa-solid fa-xmark"></i></div>
+
+                <!-- about modal about -->
+                <div class="aboutModalContainer">
+                    <p class="aboutModalHeader">About</p>
+                    <div class="aboutModalContent">
                         <p>Engineering-in-Training</p>
                         <p>Passionate about biomaterials, systems design, and data science.</p>
                         <p>Experienced in product design, R & D, and safety compliance.</p>
                         <p>Enjoys travelling, exploring new cuisines, and taking on creative side projects.</p>
                     </div>
                 </div>
-                <!-- experience section -->
-                <div class="aboutmodal-content">
-                    <p class="aboutmodal-subheader">Experience</p>
-                    <div class="aboutmodal-text">
-                        <div class="aboutmodal-exp-col">
+
+                <!-- about modal experience -->
+                <div class="aboutModalContainer">
+                    <p class="aboutModalHeader">Experience</p>
+                    <div class="aboutModalContent">
+                        <div class="aboutModalColumnV1">
                             <p>2024</p>
                             <P>Technician, Fike</p>
                             <P>Explosion protection systems</p>
                         </div>
-
-                        <div class="aboutmodal-exp-col">
+                        <div class="aboutModalColumnV1">
                             <p>2024</p>
                             <P>Eng Research Assistant, U of M</p>
                             <P>Researched bacteria-detecting biosensors</p>
                         </div>
-
-                        <div class="aboutmodal-exp-col">
+                        <div class="aboutModalColumnV1">
                             <p>2022</p>
                             <P>R&D Engineering Intern, Agnora</p>
                             <P>Designed filtration systems</p>
                         </div>
-
-                        <div class="aboutmodal-exp-col">
+                        <div class="aboutModalColumnV1">
                             <p>2022</p>
                             <P>Engineering Intern, Linde Canada</p>
                             <P>Safety compliance on acetylene cylinders</p>
                         </div>
                     </div>
                 </div>
-                <!-- my contact -->
+
                 <div class="contacts">
                     <a href="mailto:olapadedaniel99@gmail.com">Email</a>
                     <a href="https://www.linkedin.com/in/danielolapade/" target="_blank">LinkedIn</a>
@@ -123,18 +119,16 @@
                 </div>
             </div>
 
-            <!-- Project modal for sports analysis -->
-            <div id="algoprojmodal" class="projmodals">
-                <!-- cancel btn -->
-                <div class="cancel">
-                    <i class="fa-solid fa-xmark"></i>
-                </div>
+            <!--  sports analysis modal -->
+            <div id="analysisProjectModal" class="projectModal">
+                <div class="cancelBtn"><i class="fa-solid fa-xmark"></i></div>
 
-                <!-- algo modal title & about -->
-                <div class="projmodal-content projmodal-titabt">
-                    <p id="algoprojmodal-title" class="projmodal-title">The Power of Compounding: An Automated Sports
-                        Analysis System</p>
-                    <div class="projmodal-about view">
+                <!-- sports analysis modal title & about -->
+                <div id="analysisProjectModalTitle" class="projectModalContainer modalTitleContainerV1">
+                    <p class="projectModalTitle">
+                        The Power of Compounding: An Automated Sports Analysis System
+                    </p>
+                    <div class="projectModalAbout view">
                         <p>
                             Ever heard the saying about choosing between a penny that
                             doubles every day for a month versus $1 million upfront?
@@ -149,22 +143,22 @@
                             This isn't just about wagering or making $10,737,418.24—it's about leveraging data and smart
                             automation to achieve scalable, consistent success in financial markets.
                         </p>
-                        <p class="projmodaldur">
+                        <p class="modalRoleDuration">
                             <span><b>Team: </b>Me (Solo Project)</span>
                             <span><b>Duration: </b>2 Months</span>
                         </p>
                     </div>
                 </div>
 
-                <!-- algo modal banner -->
-                <div class="projmodal-content view projmodal-bc">
-                    <video src="Algorithmic Sports Analysis System/video (1).mp4" autoplay loop disablePictureInPicture></video>
+                <!-- sports analysis modal banner -->
+                <div class="projectModalContainer view projectModalBannerV1">
+                    <video src="Sports Analysis Project/video (1).mp4" autoplay loop disablePictureInPicture></video>
                 </div>
 
-                <!-- algo modal probs/goals -->
-                <div class="projmodal-content projmodal-grid">
+                <!-- sports analysis modal probs/goals -->
+                <div class="projectModalContainer projectModalGrid2">
                     <div class="view">
-                        <p class="projmodal-subheader">The Problems</p>
+                        <p class="projectModalSubHeader">The Problems</p>
                         <ul>
                             <li>Inconsistent Results: Poor predictions based on subjective intuition </li>
                             <li>Financial Risks: No standardized strategies to mitigate losses</li>
@@ -174,7 +168,7 @@
                     </div>
 
                     <div class="view">
-                        <p class="projmodal-subheader">Goals</p>
+                        <p class="projectModalSubHeader">Goals</p>
                         <ul>
                             <li>Automate: End-to-end automation for sport data analysis and wagering</li>
                             <li>Enable Sustainable Growth: Apply compounding strategies for growth</li>
@@ -184,25 +178,25 @@
                     </div>
                 </div>
 
-                <!-- system overview -->
-                <div class="projmodal-content">
-                    <p class="projmodal-header view">System Overview</p>
+                <!-- sports analysis modal system overview -->
+                <div class="projectModalContainer">
+                    <p class="projectModalHeader view">System Overview</p>
 
-                    <!-- stage 1 -->
-                    <div class="threemodal-grid">
+                    <!-- sports analysis modal stage 1 -->
+                    <div class="projectModalGrid3">
                         <div class="view">
-                            <p class="projmodal-subheader"> Stage 1: Data Scrapping</p>
+                            <p class="projectModalSubHeader"> Stage 1: Data Scrapping</p>
                             <div>
                                 <ul>
                                     <li>Scraping Odds for Upcoming Games:</li>
-                                    <ul class="minifont">
+                                    <ul class="subList">
                                         <li>Focus is low odds with high-probability outcomes</li>
                                         <li>Odds Range: (1.05 ~ 95.2%, 1.10 ~ 90.9%)</li>
                                         <li>Odds Type: Over/Under - corners, goals, etc.</li>
                                         <li>Data Source: OddsPortal, Bet365, etc.</li>
                                     </ul>
                                     <li>System scrapes historical game data</li>
-                                    <ul class="minifont">
+                                    <ul class="subList">
                                         <li>Team performance: H2H records, recent form</li>
                                         <li>Player stats: Shots, substitutions, injuries</li>
                                         <li>Data Source: ESPN, FootyStats, etc.</li>
@@ -212,20 +206,20 @@
                             </div>
                         </div>
 
-                        <!-- stage 2 -->
+                        <!-- sports analysis modal stage 2 -->
                         <div class="view">
-                            <p class="projmodal-subheader"> Stage 2: AI-Driven Analysis</p>
+                            <p class="projectModalSubHeader"> Stage 2: AI-Driven Analysis</p>
                             <div>
                                 <ul>
                                     <li>AI is trained on data for predictions</li>
                                     <li>AI tools:</li>
-                                    <ul class="minifont">
+                                    <ul class="subList">
                                         <li>XGBoost: Predicts event probabilities</li>
                                         <li>Random Forest: Validates and flags outlies</li>
                                         <li>TensorFlow: Adjusts predictions with live data</li>
                                     </ul>
                                     <li>Testing/Validations</li>
-                                    <ul class="minifont">
+                                    <ul class="subList">
                                         <li>3 accounts with different XGBoost setups</li>
                                         <li>1 account for manual bet placement</li>
                                         <li>1 control account (no bets placed)</li>
@@ -235,19 +229,19 @@
                             </div>
                         </div>
 
-                        <!-- stage 3 -->
+                        <!-- sports analysis modal stage 3 -->
                         <div class="view">
-                            <p class="projmodal-subheader"> Stage 3: Wagering</p>
+                            <p class="projectModalSubHeader"> Stage 3: Wagering</p>
                             <div>
                                 <ul>
                                     <li>AI matches predictions to scrapped odds</li>
                                     <li>Automated bet placement</li>
-                                    <ul class="minifont">
+                                    <ul class="subList">
                                         <li>APIs for integration with betting platforms</li>
                                         <li>Selenium automates platforms without APIs</li>
                                     </ul>
                                     <li>Money Management:</li>
-                                    <ul class="minifont">
+                                    <ul class="subList">
                                         <li>Start with small bets (e.g., $2)</li>
                                         <li>Apply Kelly Criterion to set optimal bet size</li>
                                         <li>Daily Cap: limit to 5 bets/day, 1 bet/match</li>
@@ -261,9 +255,9 @@
                     </div>
                 </div>
 
-                <!-- algo modal images of results  -->
-                <div class="projmodal-content">
-                    <div class="projmodal-bc projmodal-bcimg-grid">
+                <!-- sports analysis modal images  -->
+                <div class="projectModalContainer">
+                    <div class="analysisProjectImgs analysisProjectImgsGrid">
                         <img class="view" src="https://placehold.co/200x200?text=Placeholder">
                         <img class="view" src="https://placehold.co/200x200?text=Placeholder">
                         <img class="view" src="https://placehold.co/200x200?text=Placeholder">
@@ -275,12 +269,12 @@
                     </div>
                 </div>
 
-                <!-- algo - good - bad and ugly -->
-                <div class="projmodal-content">
-                    <p class="projmodal-header view">The Good, Bad, and Ugly</p>
-                    <div class="threemodal-grid">
+                <!-- sports analysis modal - good bad and ugly -->
+                <div class="projectModalContainer">
+                    <p class="projectModalHeader view">The Good, Bad, and Ugly</p>
+                    <div class="projectModalGrid3">
                         <div class="view">
-                            <p class="projmodal-subheader">The Good</p>
+                            <p class="projectModalSubHeader">The Good</p>
                             <ul>
                                 <li>AI models can be refined for greater accuracy</li>
                                 <li>Incoporation of real-time data and NLP</li>
@@ -289,16 +283,16 @@
                         </div>
 
                         <div class="view">
-                            <p class="projmodal-subheader">The Bad</p>
+                            <p class="projectModalSubHeader">The Bad</p>
                             <ul>
                                 <li>Poor data quality impacts predictions</li>
-                                <li>Automation complexity for Non-API sites</li>
+                                <li>Automation complcopyrighty for Non-API sites</li>
                                 <li>Risk of overfitting AI models to specific scenarios</li>
                             </ul>
                         </div>
 
                         <div class="view">
-                            <p class="projmodal-subheader">The Ugly</p>
+                            <p class="projectModalSubHeader">The Ugly</p>
                             <ul>
                                 <li>Potential risk of encouraging gambling addiction</li>
                                 <li>Varying regional laws can affect sytem use</li>
@@ -308,11 +302,11 @@
                     </div>
                 </div>
 
-                <!-- ethics and final thoughts-->
-                <div class="projmodal-content projmodal-grid">
+                <!-- sports analysis modal ethics and final thoughts-->
+                <div class="projectModalContainer projectModalGrid2">
                     <div class="view">
-                        <p class="projmodal-subheader projmodal-center">Ethical Disclaimer</p>
-                        <p class="projmodal-txtalign">
+                        <p class="projectModalSubHeader projectModalCenter">Ethical Disclaimer</p>
+                        <p class="projectModalTxtAlign">
                             This project is for educational purposes only and does not promote gambling. Users of the
                             system must comply with local laws and practice gamble responsibly, understanding the risks
                             involved.
@@ -320,8 +314,8 @@
                     </div>
 
                     <div class="view">
-                        <p class="projmodal-subheader projmodal-center">Final Thoughts</p>
-                        <p class="projmodal-txtalign">
+                        <p class="projectModalSubHeader projectModalCenter">Final Thoughts</p>
+                        <p class="projectModalTxtAlign">
                             This project demonstrates data-driven strategies in financial markets, focusing on
                             automation and risk management to achieve long-term success, with the potential to reach
                             $10,737,418.24-Ideally.
@@ -329,33 +323,32 @@
                     </div>
                 </div>
 
-                <div class="projmodal-content view">
+                <div class="projectModalContainer view">
                     <div id="backup">
-                        <a href="#algoprojmodal-title"><i class="fa-solid fa-angle-up"></i></a>
+                        <a href="#analysisProjectModalTitle"><i class="fa-solid fa-angle-up"></i></a>
                     </div>
                 </div>
 
-                <!-- footer for algo -->
-                <div class="projmodal-content view projmodal-center  projmodal-footer">
+                <!-- sports analysis modal footer -->
+                <div class="projectModalContainer view projectModalCenter  projectModalFooter">
                     <p>For the code, files, and setup instructions, please visit the project repository on <span>
-                            <a class="modallinks" href="https://github.com/danielolapade/"
+                            <a class="modalHeaderContent" href="https://github.com/danielolapade/"
                                 target="_blank">Github</a>.</span></p>
                 </div>
             </div>
         </div>
 
-        <!-- Project modal for biosensor Project -->
-        <div id="bioprojmodal" class="projmodals">
-            <!-- cancel btn -->
-            <div class="cancel">
-                <i class="fa-solid fa-xmark"></i>
-            </div>
 
-            <!-- bio modal title & about -->
-            <div class="projmodal-content projmodal-titabt">
-                <p id="bioprojmodal-title" class="projmodal-title">Compatibility Assessment of Biosensor with Foam
-                    Dressings for Infection Detection</p>
-                <div class="projmodal-about view">
+        <!-- biosensor project modal-->
+        <div id="biosensorProjectmodal" class="projectModal">
+            <div class="cancelBtn"><i class="fa-solid fa-xmark"></i></div>
+
+            <!-- biosensor project title & about -->
+            <div class="projectModalContainer modalTitleContainerV1">
+                <p id="biosensorProjectectModalTitle" class="projectModalTitle">
+                    Compatibility Assessment of Biosensor with Foam Dressings for Infection Detection
+                </p>
+                <div class="projectModalAbout view">
                     <p>
                         This project evaluates the compatibility of a biosensor with commercially available foam
                         dressings to determine which-materials and thicknesses-work best for infection detection in both
@@ -372,26 +365,24 @@
                             to break down fats and minerals for consumption—enabling early detection before infection
                             begins.
                         </span>
-
-
                     </p>
-                    <p class="projmodaldur">
+                    <p class="modalAcknowledgement">
                         <b>Acknowledgments: </b>
                         <span>Dr. Song Liu, P.Eng</span>
                         <span>Farinaz Jonidi Shariatzadeh, PhD</span>
                     </p>
-                    <p class="projmodaldur">
+                    <p class="modalRoleDuration">
                         <span><b>Role: </b>Research Assistant</span>
                         <span><b>Duration: </b>5 Months</span>
                     </p>
                 </div>
             </div>
 
-            <!-- bio modal probs/goals -->
-            <div class="projmodal-content">
-                <div class="threemodal-grid">
+            <!-- biosensor project probs/goals -->
+            <div class="projectModalContainer">
+                <div class="projectModalGrid3">
                     <div class="view">
-                        <p class="projmodal-subheader">Biosensor Key Insights</p>
+                        <p class="projectModalSubHeader">Biosensor Key Insights</p>
                         <ul>
                             <li>Electrospun from polymers + HCy solution</li>
                             <li>Color: Yellow to green upon lipase reaction</li>
@@ -399,9 +390,8 @@
                             <li>Bacterias Tested: <i>E. coli, MRSA, P. aeruginosa</i></li>
                         </ul>
                     </div>
-
                     <div class="view">
-                        <p class="projmodal-subheader">Biosensor and Foam Dressing Tests</p>
+                        <p class="projectModalSubHeader">Biosensor and Foam Dressing Tests</p>
                         <ul>
                             <li>Foam dressing absorption test</li>
                             <li>Biosensor dye penetration test</li>
@@ -411,9 +401,8 @@
                             <li>Antibacterial solution test (Vashe)</li>
                         </ul>
                     </div>
-
                     <div class="view">
-                        <p class="projmodal-subheader">Main Findings</p>
+                        <p class="projectModalSubHeader">Main Findings</p>
                         <ul>
                             <li>Dressings with fluid-resistant top layers impact biosensor performance</li>
                             <li>Exudate volume affects biosensor response time</li>
@@ -426,40 +415,146 @@
                 </div>
             </div>
 
-            <!-- bio modal images of results  -->
-            <div class="projmodal-content">
-                <div id="bioprojimgs" class="bioprojimgs-grid view"></div>
+            <!-- biosensor project images  -->
+            <div class="projectModalContainer">
+                <div id="biosensorProjectimgs" class="projectModalImgsV1 view"></div>
             </div>
 
-            <div class="projmodal-content view">
+            <div class="projectModalContainer view">
                 <div id="backup">
-                    <a href="#bioprojmodal-title"><i class="fa-solid fa-angle-up"></i></a>
+                    <a href="#biosensorProjectectModalTitle"><i class="fa-solid fa-angle-up"></i></a>
                 </div>
             </div>
 
-            <!-- footer for bio -->
-            <div class="projmodal-content view projmodal-center  projmodal-footer">
+            <!-- biosensor project modal footer -->
+            <div class="projectModalContainer view projectModalCenter  projectModalFooter">
                 <p>For more info visit: <span>
-                        <a class="modallinks" href="https://pubs.acs.org/doi/abs/10.1021/acsabm.4c00038"
+                        <a class="modalHeaderContent" href="https://pubs.acs.org/doi/abs/10.1021/acsabm.4c00038"
                             target="_blank">Ultrasensitive Nanofiber Biosensor - Rapid In Situ Chromatic Detection of
-                            Bacteria for Healthcare Innovation</a>.</span>
+                            Bacteria for Healthcare Innovation</a></span>
                 </p>
             </div>
         </div>
+
+
+        <!-- exhibit project modal-->
+        <div id="exhibitModal" class="projectModal">
+            <div class="cancelBtn"><i class="fa-solid fa-xmark"></i></div>
+
+            <!-- exhibit project modal title & about -->
+            <div class="projectModalContainer modalTitleContainerV2">
+                <p class="projectModalTitle">Interactive Exhibit Project (Capstone)</p>
+                <div class="projectModalAbout view">
+                    <p>
+                        For my capstone project, I collaborated with the Royal Aviation Museum of Western Canada (RAMWC)
+                        to design and prototype an interactive Exhibit Project.
+                        Targeted at students (grades 7 and below) and museum visitors, the exhibit had two main goals:
+                    <ul>
+                        <li>Explain aviation fuel complcopyrighties and the transition to sustainable options.</li>
+                        <li>Inspire interest in STEM careers to address sustainable aviation challenges.</li>
+                    </ul>
+                    Aviation contributes significantly to carbon emissions, and transitioning to sustainable fuels poses
+                    challenges such as infrastructure limitations, aircraft weight, energy density, and storage.
+                    The exhibit was designed to present these intricacies in a fun, accessible way to inspire future
+                    innovators.
+                    </p>
+                    <p class="modalAcknowledgement">
+                        <b>Acknowledgments: </b>
+                        <span>RAMWC</span>
+                        <span>Camryn McMillan (Team member)</span>
+                    </p>
+                    <p class="modalRoleDuration">
+                        <span><b>Role: </b>Instrumentation and CAD Drafting</span>
+                        <span><b>Duration: </b>8 Months</span>
+                    </p>
+                </div>
+            </div>
+
+            <!-- exhibit project modal banner images and video -->
+            <div class="projectModalContainer exhibitModalGridV1">
+                <div id="exhibitModalBanner" class="view projectModalBannerV1">
+                    <button class="exhibitBannerLeft"><i class="fa-solid fa-chevron-left"></i></button>
+                    <button class="exhibitBannerRight"><i class="fa-solid fa-chevron-right"></i></button>
+                </div>
+    
+                <div class="view projectModalBannerV1">
+                    <video src="Exhibit Project/Video (1).mp4" controls autoplay loop muted disablePictureInPicture></video>
+                </div>
+            </div>
+
+            
+            <!-- exhibit project problems and solutions -->
+            <div class="projectModalContainer projectModalGrid2">
+                <div class="view">
+                    <p class="projectModalSubHeader">Project Specifications</p>
+                    <ul>
+                        <li>Deliver three learning outcomes:</li>
+                        <ul>
+                            <li>History of aviation fuel (past to present)</li>
+                            <li>Energy density comparisons of different fuel options</li>
+                            <li>Carbon emissions comparisons of different fuel options</li>
+                        </ul>
+                        <li>Adhere to constraints like height, space, durability, cost, power, etc.</li>
+                        <li>Accessible for all ages and abilities, including wheelchair users</li>
+                    </ul>
+                </div>
+                <div class="view">
+                    <p class="projectModalSubHeader">Proposed Solution</p>
+                    <ul>
+                        <li>A three-part exhibit featuring: </li>
+                        <ul>
+                            <li>Timeline Wall</li>
+                            <li>Carbon Emission Station</li>
+                            <li>Energy Density Station</li>
+                        </ul>
+                        <li>Achieved all learning outcomes with an engaging and interactive design</li>
+                        <li>Achieved an 85% satisfactory rating during exhibit viewing</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- exhibit project modal images -->
+            <div class="projectModalContainer">
+                <div id="exhibitImgs" class="projectModalImgsV1 view"></div>
+            </div>
+
+
+            <div class="projectModalContainer view">
+                <div id="backup">
+                    <a href="#biosensorProjectectModalTitle"><i class="fa-solid fa-angle-up"></i></a>
+                </div>
+            </div>
+
+            <!-- exhibit project modal footer -->
+            <div class="projectModalContainer view projectModalCenter  projectModalFooter">
+                <p>For more info visit: <span>
+                        <a class="modalHeaderContent" href="https://royalaviationmuseum.com/"
+                            target="_blank">RoyalAviationMuseum.com</a></span>
+                </p>
+            </div>
         </div>
+
+        <!-- game -->
+         <div>
+
+         </div>
 
 
     </main>
 
+
+    <!-- footer -->
     <footer>
         <div class="backup-opacity" id="backup">
             <a href="#header"><i class="fa-solid fa-angle-up"></i></a>
         </div>
-        <div id="extras">
-            <span id="exit">CREATED BY YOURS TRULY (ME) WITH HTML, CSS, AND JAVASCRIPT &copy; 2024</span>
-            <span id="game"> PLAY DEAD OR WOUNDED</span>
+        <div id="footer">
+            <span id="copyright">CREATED BY YOURS TRULY (ME) WITH HTML, CSS, AND JAVASCRIPT &copy; 2024</span>
+            <span id="playGame"> PLAY DEAD OR WOUNDED</span>
         </div>
     </footer>
+
+     
 </body>
 
 </html>
