@@ -30,6 +30,8 @@ setInterval(() => {
     title = !title;
 }, 3000);
 
+//game
+
 
 //biosensor random images
 const biosensorProject = document.getElementById("biosensorProject");
@@ -89,15 +91,23 @@ modalImages("exhibitImgs", 30, "Exhibit Project/img", getExhibitDescription)
 
 //exhibit modal banner
 const exhibitModalBanner = document.getElementById("exhibitModalBanner");
-for (let i = 0; i <= 4;) {
-    const img = document.createElement("img");
+const exhibitBannerLeft = document.getElementById("exhibitBannerLeft");
+const exhibitBannerRight = document.getElementById("exhibitBannerRight");
+const img = document.createElement("img");
+let i = 1;
+img.src = `Exhibit Project/banner (${i}).jpeg`;
+img.loading = "lazy"
+exhibitModalBanner.appendChild(img);
+exhibitBannerRight.addEventListener("click", () => {
+    i++;
+    if (i > 4) i = 1;
     img.src = `Exhibit Project/banner (${i}).jpeg`;
-
-    if (i === 4 || -1) {
-        i = 0;
-    }
-    exhibitModalBanner.appendChild(img);
-}
+});
+exhibitBannerLeft.addEventListener("click", () => {
+    i--;
+    if (i < 1) i = 4;
+    img.src = `Exhibit Project/banner (${i}).jpeg`;
+});
 
 // modal selection
 const info = document.getElementById("info");
@@ -159,4 +169,66 @@ const viewobserver = observer(0);
 views.forEach((view) => {
     viewobserver.observe(view);
 });
+
+
+//my name typing 
+myName = document.getElementById("myName");
+let nameCharIndex = 0;
+const nameText = "Hi, i'm Daniel."
+function typingName(myName, nameText) {
+    myName.textContent = "";
+    let typingInterval = setInterval(() => {
+        if (nameCharIndex < nameText.length) {
+            myName.textContent += nameText[nameCharIndex];
+            nameCharIndex++;
+        } else {
+            clearInterval(typingInterval);
+        }
+    }, 75);
+};
+typingName(myName, nameText);
+
+let meFacts = document.getElementById("meFacts")
+let facts = [
+    "An Engineer-in-Training.", "A seeker of P Eng. level greatness.", "A 6-foot tall giant.",
+    "A new plant parent.", "A croissant connoisseur.", "A meat pizza lover.",
+    "A believer in third chances.", "An avid coffee drinker.",
+    "A collector of interesting facts.", "A fan of all things science.",
+    "A philosopher at heart.", "A dog person (who secretly loves cats).",
+    "A defender of pineapple on pizza.", "A globe-trotter on a mission.",
+    "A concert-goer, rain or shine.", "Creator of this semi-good looking site.",
+    "A weekend soccer player.", "A fashionista on a budget.",
+    "Lover of cold showers.", "A morning person.",
+    "A passionate advocate for sustainability.",
+    "A strategic chess competitor."
+];
+let usedFacts = [0];
+let factCharIndex = 0;
+function typingFact(meFacts, factText) {
+    factCharIndex = 0;
+    meFacts.textContent = "";
+    let typingInterval = setInterval(() => {
+        if (factCharIndex < factText.length) {
+            meFacts.textContent += factText[factCharIndex];
+            factCharIndex++;
+        } else {
+            clearInterval(typingInterval);
+        }
+    }, 100);
+};
+function displayFacts() {
+    if (usedFacts.length === facts.length) {
+        usedFacts = [];
+    }
+
+    let index = Math.floor(Math.random() * facts.length);
+    while (usedFacts.includes(index)) {
+        index = Math.floor(Math.random() * facts.length);
+    }
+    usedFacts.push(index);
+    const factText = facts[index];
+    typingFact(meFacts, factText);
+    setTimeout(displayFacts, factText.length * 100 + 5000);
+}
+setTimeout(displayFacts, nameText.length * 80 + 4000);
 

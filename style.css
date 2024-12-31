@@ -3,12 +3,14 @@
     --col2: rgb(248, 248, 248);
     --col3: rgb(87, 87, 87);
     --col4: rgb(0, 0, 0);
-    --col5: rgba(0, 0, 0, 0.60);
+    --col5: rgba(0, 0, 0, 0.70);
+    --col6: rgba(0, 0, 0, 0.25);
     font-size: 15px;
 }
 
 body.darktheme {
-    --col5: rgba(30, 30, 30, 0.70);
+    --col6: rgba(255, 255, 255, 0.17);
+    --col5: rgba(30, 30, 30, 0.80);
     --col4: rgb(255, 255, 255);
     --col3: rgb(176, 176, 176);
     --col2: rgb(14, 14, 14);
@@ -34,8 +36,8 @@ body {
     scroll-behavior: smooth;
     transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
     scrollbar-width: none;
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
 }
 
 main {
@@ -60,12 +62,15 @@ li {
 
 header {
     margin-top: 0.5rem;
+    margin-left: 0.08rem;
+    margin-right: 0.08rem;
     height: 2rem;
-    padding: 0 0.2rem;
     display: flex;
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     justify-content: space-between;
     align-items: center;
+    opacity: 0;
+    animation: opacity 0.5s 1.8s ease-in-out forwards;
 }
 
 #headerInfo {
@@ -81,7 +86,7 @@ header {
 }
 
 .headerContent:hover {
-    font-weight: 600;
+    font-weight: 550;
 }
 
 #theme {
@@ -100,7 +105,7 @@ header {
 }
 
 .themeToggleBtn:hover {
-    transform: scale(1.05);
+    transform: scale(1.03);
 }
 
 .themeToggleBtn::after {
@@ -120,23 +125,37 @@ header {
 }
 
 .intro {
-    font-weight: 600;
-    font-size: 3.5rem;
-    margin-top: 10rem;
-    margin-bottom: 7rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    font-weight: 500;
+    font-size: 3.7rem;
     color: var(--col3);
-    opacity: 0;
     align-items: center;
-    animation: slideup 1s ease-in-out forwards;
+}
+
+#myName {
+    margin-top: 9rem;
+    margin-bottom: 0;
+    align-items: center;
+
+}
+
+#meFacts {
+    font-size: 1.5rem;
+    min-height: 5rem;
+    margin-top: 0;
+    margin-bottom: 3rem;
+    align-items: center;
 }
 
 #projects {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: auto;
-    gap: 0.5rem;
+    gap: 2rem;
     opacity: 0;
-    animation: slideup 0.8s 0.5s ease-in-out forwards;
+    animation: slideup 1.2s 1.2s ease-in-out forwards;
 }
 
 .projectContent {
@@ -175,11 +194,11 @@ header {
 }
 
 .projectContent:hover {
-    transform: scale(0.985);
+    transform: scale(0.988);
 }
 
 .projectContent:active {
-    transform: scale(0.965);
+    transform: scale(0.970);
 }
 
 .projectContent:hover .projectContentText {
@@ -202,8 +221,9 @@ header {
 
 .cancelBtn {
     position: sticky;
-    width: 1rem;
-    height: 1rem;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
     display: flex;
     justify-content: center;
     top: 0.5rem;
@@ -211,7 +231,7 @@ header {
     cursor: pointer;
     font-size: 1rem;
     color: var(--col4);
-    transition: transform 0.5s ease-in-out, color 0.5s ease-in;
+    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
 
@@ -225,7 +245,7 @@ header {
     position: fixed;
     width: 70%;
     height: auto;
-    top: 3rem;
+    top: 2.5rem;
     left: 50%;
     transform: translateX(-50%);
     background: var(--col1);
@@ -253,7 +273,7 @@ header {
 
 .aboutModalHeader {
     margin: 0;
-    font-weight: 600;
+    font-weight: 500;
 }
 
 .aboutModalContent {
@@ -335,9 +355,9 @@ header {
 /* projmodal */
 .projectModal {
     position: fixed;
-    width: calc(100% - 1rem);
-    height: calc(100% - 3.5rem);
-    top: 3rem;
+    width: calc(100% - 4rem);
+    height: calc(100% - 4.9rem);
+    top: 2.7rem;
     left: 50%;
     transform: translateX(-50%);
     background: var(--col1);
@@ -425,31 +445,51 @@ header {
 .exhibitModalGridV1 {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 2rem; 
+    gap: 2rem;
 }
 
-.exhibitModalGridV1 div{
-    border-radius: 0.5rem;
-    cursor: pointer;
-}
-
-.exhibitBannerLeft{
+#exhibitModalBanner {
     display: flex;
     justify-content: center;
-
-
+    border-radius: 0.5rem;
+    position: relative;
+    width: 100%;
 }
-.exhibitBannerRight{ 
 
-    
-}
-.exhibitBannerBtn i {
+#exhibitBannerLeft,
+#exhibitBannerRight {
     display: flex;
+    position: absolute;
+    justify-content: center;
     align-items: center;
-    justify-items: center;
+    border: none;
+    width: 0.8rem;
+    height: 0.8rem;
+    border-radius: 50%;
+    padding: 0.75rem;
+    font-size: 0.75rem;
+    top: 50%;
+    cursor: pointer;
+    z-index: 2;
+    margin: 0.5rem;
     background: var(--col3);
+    transition: transform 0.5s ease-in-out;
 }
 
+#exhibitBannerRight {
+    right: 10px;
+    color: var(--col1);
+}
+
+#exhibitBannerLeft {
+    left: 10px;
+    color: var(--col1);
+}
+
+#exhibitBannerRight:hover,
+#exhibitBannerLeft:hover {
+    transform: scale(1.05);
+}
 
 
 .projectModalSubHeader {
@@ -462,11 +502,12 @@ header {
     display: flex;
     font-size: 3rem;
     margin: 0;
-    font-weight: 600;
+    font-weight: 500;
     color: var(--col3);
     justify-content: center;
     align-items: center;
 }
+
 
 .projectModalGrid2 {
     display: grid;
@@ -554,7 +595,7 @@ header {
 }
 
 .modalImgContianer:hover {
-    box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.25)
+    box-shadow: 5px 5px 8px var(--col6);
 }
 
 .modalImgContianer:hover .modalImgDescription {
@@ -583,7 +624,7 @@ footer {
     opacity: 0;
     margin-bottom: 0.5rem;
     font-size: 0.8rem;
-    animation: opacity 0.7s 0.8s ease-in-out forwards;
+    animation: opacity 0.5s 1.8s ease-in-out forwards;
 }
 
 #backup {
@@ -617,7 +658,7 @@ footer {
 }
 
 #playGame:hover {
-    font-weight: 600;
+    font-weight: 500;
 }
 
 
