@@ -24,13 +24,87 @@ if (storedtheme === "darktheme") {
 
 // playGame section
 const playGame = document.getElementById("playGame");
+const gameIntro = document.getElementById("gameIntro");
+const gameTitle = document.getElementById("gameTitle");
+const gameMotto = document.getElementById("gameMotto");
+const gameContent = document.getElementsByClassName("gameContent")
+const gameCloseBtn = document.getElementById("closeGameModal");
+
 let title = true;
 setInterval(() => {
-    playGame.textContent = title ? "PLAY DEAD OR WOUNDED" : "ITS'S A NUMBERS GAME. TRULY!";
+    playGame.textContent = title ? "CLICK TO PLAY DEAD OR WOUNDED" : "ITS'S A NUMBERS GAME";
     title = !title;
 }, 3000);
 
+function resetVisibility (el) {
+    el.style.visibility = "hidden";
+    el.style.opacity = 0;
+}
+
+function applyVisibility (el) {
+    el.style.visibility = "visible";
+    el.style.opacity = 1;
+}
+function applyAnimation (el, animation) {
+    el.style.animation = animation;
+}
+
+function resetAnimation (el) {
+    el.style.animation = "none";
+    el.style.opacity = 0;
+    el.offsetHeight;
+}
+
+// //gameIntro
+function startgame() {
+    Array.from(gameContent).forEach(el => resetVisibility(el));
+    applyVisibility (gameIntro);
+    setTimeout(() => {
+        applyAnimation(gameTitle, "leftSlideIn 1.25s ease forwards, glow 2.25s ease-in-out infinite, flicker 0.5s 1.25s");
+        applyAnimation(gameMotto, "rightSlideIn 1.25s ease forwards, pulse 1s 1.25s ease-in-out");
+    }, 500);
+    setTimeout(()=>{
+        gameIntro.style.transition = "opacity 0.5s ease-out";
+        gameIntro.style.opacity = 0;
+    }, 3000);
+    setTimeout(()=>{
+        resetVisibility(gameIntro);
+        Array.from(gameContent).forEach(el => applyVisibility (el));
+        Array.from(gameContent).forEach(el => applyAnimation (el,"opacity 1s ease-in-out"));
+        ;
+    }, 3500);
+}
+playGame.addEventListener("click", startgame);
+
+const exitGameModal = gameCloseBtn || overlay;
+exitGameModal.addEventListener("click", ()=> {
+    resetAnimation (gameTitle);
+    resetAnimation (gameMotto);
+})
+
 //game
+
+//timer
+function startCountDown (countDown) {
+    const timeDisplay = document.getElementById("timeLeft");
+
+    const interval = setInterval(() => {
+        if (countDown <= 0) {
+            clearInterval(interval);
+            timeDisplay.textContent = "00:00:00";
+            return;
+        }
+
+        const hours = Math.floor(countDown/3600);
+        const mins = Math.floor((countDown % 3600) / 60);
+        const secs = countDown % 60;
+        timeDisplay.textContent = `${String(hours).padStart(2, '0')}:${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+
+        countDown--;
+
+    }, 1000)
+}
+startCountDown (60);
 
 
 //biosensor random images
@@ -50,15 +124,17 @@ function modalImages(elementId, numImages, imagePath, getDescription) {
         descriptionDiv.textContent = description;
         descriptionDiv.classList.add("modalImgDescription");
 
-        const modalImgContianer = document.createElement("div");
-        modalImgContianer.classList.add("modalImgContianer");
+        const modalImgContainer = document.createElement("div");
+        modalImgContainer.classList.add("modalImgContainer");
+        modalImgContainer.classList.add("view");
+        modalImgContainer.style.transition = "opacity 0.8s ease-in-out, transform 0.8s ease-in-out";
         const img = document.createElement("img");
         img.src = `${imagePath} (${i}).jpg`;
         img.loading = "lazy";
 
-        modalImgContianer.appendChild(img);
-        modalImgContianer.appendChild(descriptionDiv);
-        modalID.appendChild(modalImgContianer);
+        modalImgContainer.appendChild(img);
+        modalImgContainer.appendChild(descriptionDiv);
+        modalID.appendChild(modalImgContainer);
     }
 }
 
@@ -120,6 +196,7 @@ const biosensorProjectmodal = document.getElementById("biosensorProjectmodal");
 const projectModal = document.getElementsByClassName("projectModal");
 const exhibitModal = document.getElementById("exhibitModal");
 const exhibitProject = document.getElementById("exhibitProject");
+const gameModal = document.getElementById("gameModal");
 
 function modaltoggle(modal, action) {
     if (action === "show") {
@@ -136,6 +213,7 @@ info.addEventListener("click", () => modaltoggle(aboutModal, "show"));
 analysisProject.addEventListener("click", () => modaltoggle(analysisProjectModal, "show"));
 biosensorProject.addEventListener("click", () => { modaltoggle(biosensorProjectmodal, "show") });
 exhibitProject.addEventListener("click", () => modaltoggle(exhibitModal, "show"));
+playGame.addEventListener("click", () => modaltoggle(gameModal, "show"));
 
 Array.from(cancelBtn).forEach(el => el.addEventListener("click", () => {
     Array.from(projectModal).forEach(el => modaltoggle(el, "hide"));
@@ -170,65 +248,52 @@ views.forEach((view) => {
     viewobserver.observe(view);
 });
 
-
-//my name typing 
-myName = document.getElementById("myName");
-let nameCharIndex = 0;
-const nameText = "Hi, i'm Daniel."
-function typingName(myName, nameText) {
-    myName.textContent = "";
-    let typingInterval = setInterval(() => {
-        if (nameCharIndex < nameText.length) {
-            myName.textContent += nameText[nameCharIndex];
-            nameCharIndex++;
-        } else {
-            clearInterval(typingInterval);
-        }
-    }, 75);
-};
-typingName(myName, nameText);
-
-let meFacts = document.getElementById("meFacts")
+let myName = document.getElementById("myName")
 let facts = [
-    "An Engineer-in-Training.", "A seeker of P Eng. level greatness.", "A 6-foot tall giant.",
+    "Hi, i'm Daniel.", "An Engineer-in-Training.", "A seeker of P Eng. level greatness.",
     "A new plant parent.", "A croissant connoisseur.", "A meat pizza lover.",
-    "A believer in third chances.", "An avid coffee drinker.",
+    "A believer in third chances.", "An avid coffee drinker.", "A wannabe stand-up comedian.",
     "A collector of interesting facts.", "A fan of all things science.",
     "A philosopher at heart.", "A dog person (who secretly loves cats).",
     "A defender of pineapple on pizza.", "A globe-trotter on a mission.",
     "A concert-goer, rain or shine.", "Creator of this semi-good looking site.",
-    "A weekend soccer player.", "A fashionista on a budget.",
-    "Lover of cold showers.", "A morning person.",
-    "A passionate advocate for sustainability.",
-    "A strategic chess competitor."
+    "A weekend soccer player.", "A fashionista on a budget.", "A pancake flipping pro.",
+    "A cold shower enthusiast.", "A morning person.", "A 6-foot tall giant.",
+    "A passionate advocate for sustainability.", "A coffee-shop explorer.",
+    "A strategic chess competitor.",
 ];
-let usedFacts = [0];
 let factCharIndex = 0;
-function typingFact(meFacts, factText) {
+function typingFact(myName, factText) {
     factCharIndex = 0;
-    meFacts.textContent = "";
+    myName.textContent = "";
     let typingInterval = setInterval(() => {
         if (factCharIndex < factText.length) {
-            meFacts.textContent += factText[factCharIndex];
+            myName.textContent += factText[factCharIndex];
             factCharIndex++;
         } else {
             clearInterval(typingInterval);
         }
-    }, 100);
+    }, 95);
 };
+let usedFacts = [];
 function displayFacts() {
     if (usedFacts.length === facts.length) {
         usedFacts = [];
     }
-
-    let index = Math.floor(Math.random() * facts.length);
-    while (usedFacts.includes(index)) {
-        index = Math.floor(Math.random() * facts.length);
+    let index;
+    if (usedFacts.length === 0) {
+        index = 0;
+    } else {
+        do {
+            index = Math.floor(Math.random() * facts.length);
+        } while (usedFacts.includes(index))
     }
-    usedFacts.push(index);
     const factText = facts[index];
-    typingFact(meFacts, factText);
-    setTimeout(displayFacts, factText.length * 100 + 5000);
+    typingFact(myName, factText);
+    console.log(factText);
+    setTimeout(() => {
+        usedFacts.push(index);
+        displayFacts();
+    }, factText.length * 95 + 6000);
 }
-setTimeout(displayFacts, nameText.length * 80 + 4000);
-
+displayFacts()

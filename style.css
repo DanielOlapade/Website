@@ -1,20 +1,28 @@
 :root {
-    --col1: rgb(255, 255, 255);
-    --col2: rgb(248, 248, 248);
-    --col3: rgb(87, 87, 87);
-    --col4: rgb(0, 0, 0);
+    --col1: rgb(255, 255, 255); 
+    --col2: rgb(248, 248, 248); 
+    --col3: rgb(87, 87, 87);    
+    --col4: rgb(0, 0, 0);       
     --col5: rgba(0, 0, 0, 0.70);
     --col6: rgba(0, 0, 0, 0.25);
+    --col7: rgb(255, 99, 71); 
+    --col8: blue;
+    --col9: darkblue;
+
     font-size: 15px;
 }
 
 body.darktheme {
-    --col6: rgba(255, 255, 255, 0.17);
+    --col6: rgba(255, 255, 255, 0.298);
     --col5: rgba(30, 30, 30, 0.80);
     --col4: rgb(255, 255, 255);
     --col3: rgb(176, 176, 176);
     --col2: rgb(14, 14, 14);
-    --col1: rgb(0, 0, 0);
+    --col1: rgb(0, 0, 0); 
+    --col7: rgb(255, 99, 71);  
+    --col8: blue;
+    --col9: darkblue;
+
 }
 
 html,
@@ -70,14 +78,7 @@ header {
     justify-content: space-between;
     align-items: center;
     opacity: 0;
-    animation: opacity 0.5s 1.8s ease-in-out forwards;
-}
-
-#headerInfo {
-    display: inline-flex;
-    align-items: center;
-    gap: 1rem;
-
+    animation: opacity 0.5s 2s ease-in-out forwards;
 }
 
 .headerContent {
@@ -96,7 +97,7 @@ header {
 .themeToggleBtn {
     display: flex;
     position: relative;
-    width: 1.7rem;
+    width: 1.8rem;
     height: 1rem;
     background-color: var(--col3);
     border-radius: 1rem;
@@ -121,41 +122,41 @@ header {
 }
 
 #theme:checked~.themeToggleBtn::after {
-    transform: translateX(0.7rem);
+    transform: translateX(0.8rem);
 }
 
 .intro {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
-    font-weight: 500;
+    font-weight: 550;
     font-size: 3.7rem;
+    color: var(--col4);
+    margin-top: 11rem;
+    margin-bottom: 7rem;
+}
+.subtleHeader{
     color: var(--col3);
-    align-items: center;
+    font-size: 0.8rem;
+    margin-top: 0;
+    margin-bottom: 0;
+    opacity: 0;
+    animation: slideup 1.2s 1.4s ease-in-out forwards;
 }
 
 #myName {
-    margin-top: 9rem;
-    margin-bottom: 0;
-    align-items: center;
-
+    min-height: 4.5rem;
+    margin:0;
 }
 
-#meFacts {
-    font-size: 1.5rem;
-    min-height: 5rem;
-    margin-top: 0;
-    margin-bottom: 3rem;
-    align-items: center;
-}
 
 #projects {
+    margin-top: 0.8rem;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: auto;
     gap: 2rem;
     opacity: 0;
-    animation: slideup 1.2s 1.2s ease-in-out forwards;
+    animation: slideup 1.2s 1.4s ease-in-out forwards;
 }
 
 .projectContent {
@@ -194,11 +195,11 @@ header {
 }
 
 .projectContent:hover {
-    transform: scale(0.988);
+    transform: scale(0.985);
 }
 
 .projectContent:active {
-    transform: scale(0.970);
+    transform: scale(0.965);
 }
 
 .projectContent:hover .projectContentText {
@@ -273,7 +274,7 @@ header {
 
 .aboutModalHeader {
     margin: 0;
-    font-weight: 500;
+    font-weight: 550;
 }
 
 .aboutModalContent {
@@ -352,7 +353,7 @@ header {
     transform: translateY(0);
 }
 
-/* projmodal */
+/* off */
 .projectModal {
     position: fixed;
     width: calc(100% - 4rem);
@@ -373,6 +374,7 @@ header {
     overflow-y: auto;
     scrollbar-width: none;
     scroll-behavior: smooth;
+    /* border: 1px red solid; */
 }
 
 .projectModalContainer {
@@ -402,7 +404,7 @@ header {
 .projectModalTitle {
     font-size: 4.3rem;
     margin: 0;
-    font-weight: 500;
+    font-weight: 550;
 }
 
 .modalRoleDuration {
@@ -495,14 +497,14 @@ header {
 .projectModalSubHeader {
     font-size: 1.5rem;
     margin: 0;
-    font-weight: 500;
+    font-weight: 550;
 }
 
 .projectModalHeader {
     display: flex;
     font-size: 3rem;
     margin: 0;
-    font-weight: 500;
+    font-weight: 550;
     color: var(--col3);
     justify-content: center;
     align-items: center;
@@ -557,7 +559,7 @@ header {
     gap: 2rem;
 }
 
-.modalImgContianer {
+.modalImgContainer {
     display: flex;
     position: relative;
     cursor: pointer;
@@ -567,7 +569,7 @@ header {
     transition: box-shadow 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
 
-.modalImgContianer img {
+.modalImgContainer img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -594,20 +596,20 @@ header {
     transition: opacity 0.5s ease-in-out;
 }
 
-.modalImgContianer:hover {
+.modalImgContainer:hover {
     box-shadow: 5px 5px 8px var(--col6);
 }
 
-.modalImgContianer:hover .modalImgDescription {
+.modalImgContainer:hover .modalImgDescription {
     opacity: 1;
 }
 
-.modalImgContianer:active {
+.modalImgContainer:active {
     transform: scale(1.5);
     z-index: 2;
 }
 
-.modalImgContianer:active .modalImgDescription {
+.modalImgContainer:active .modalImgDescription {
     opacity: 0;
 }
 
@@ -615,7 +617,8 @@ header {
 #aboutModal.show,
 #analysisProjectModal.show,
 #biosensorProjectmodal.show,
-#exhibitModal.show {
+#exhibitModal.show,
+#gameModal.show {
     opacity: 1;
     visibility: visible;
 }
@@ -624,7 +627,7 @@ footer {
     opacity: 0;
     margin-bottom: 0.5rem;
     font-size: 0.8rem;
-    animation: opacity 0.5s 1.8s ease-in-out forwards;
+    animation: opacity 0.5s 2s ease-in-out forwards;
 }
 
 #backup {
@@ -658,28 +661,182 @@ footer {
 }
 
 #playGame:hover {
+    font-weight: 550;
+}
+
+#gameIntro{
+    visibility: visible;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+}
+#gameTitle{
+    opacity: 0;
+    margin-bottom: 0;
+    font-size: 11rem;
+    font-family: "Creepster", serif;
+    letter-spacing: -0.5rem;
+}
+#gameMotto{
+    opacity: 0;
+    margin-top: -0.5rem;
+    font-size: 3rem;
+    font-family: "Joti One", serif;
+}
+
+.gameContent {
+    visibility: hidden;
+}
+
+#gameHeader{
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#headerTitle{
+    margin: 0;
+    font-size: 3rem;
+    font-family: "Creepster", serif;
+}
+#headerMotto{
+    margin: 0;
+    font-size: 1rem;
+    font-family: "Joti One", serif;
+}
+
+#gameOptions{
+    display: flex;
+    gap: 1rem;
+}
+.controlBtn{
+    height: 2.5rem;
+    width: 2.5rem;
+    border: none;
+    font-size: 0.8rem;
+    border-radius: 50%;
+    color: var(--col4);
+    background-color: var(--col6);
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.5s ease-in-out;
+}
+.controlBtn:hover{
+    transform: scale(1.05);
+}
+.controlBtn:active{
+    transform: scale(0.7);
+}
+
+#gamePlay{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.gamePlaySections{
+    border-radius: 0.5rem;
+}
+
+#timerLevelContainer{
+    display: grid;
+    grid-template-rows: repeat(2,1fr);
+    gap: 2rem;
+    justify-items: center;
+}
+
+#timer{
+    display: flex;
+    width: 100%;
+    height: 15rem;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    border: 1rem solid var(--col7); 
+    border-radius: 2.5rem;
+}
+#timeLeft{
+    font-size: 5rem;
+    font-family: monospace;
+    text-shadow: 0 0.3rem 0.3rem var(--col6);
+}
+
+#level{
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    width: 100%;
+}
+#level p {
+    font-size: 0.8rem;
+    margin: 0;  
+    padding: 0; 
+}
+#levels{
+    display: flex;
+    font-size: 1.3rem;
     font-weight: 500;
+    font-family: "Fredoka", serif;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+}
+.levels{
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 6rem;
+    background-color: var(--col8);
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    margin: 0;
+    position: relative;
+    transition: background-color 0.5s ease-in-out;
+}
+
+.levels:hover{
+    background-color: var(--col9);
 }
 
 
 @keyframes slideup {
-    from {
-        transform: translateY(4rem);
-        opacity: 0;
-    }
-
-    to {
-        transform: translateY(0rem);
-        opacity: 1;
-    }
+    from {transform: translateY(6rem);opacity: 0;}
+    to {transform: translateY(0rem);opacity: 1;}
 }
 
-@keyframes opacity {
-    from {
-        opacity: 0;
-    }
 
-    to {
-        opacity: 100;
-    }
+@keyframes opacity {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+@keyframes flicker {
+    0%{color: red;}
+    50%{color: black;}
+    100%{color: red;}
+}
+@keyframes leftSlideIn {
+    0%{transform: translateX(-30rem);opacity: 0;}
+    100%{transform: translateX(0);opacity: 1;}
+}
+@keyframes rightSlideIn {
+    0%{transform: translateX(30rem); opacity: 0;}
+    100%{transform: translateX(0);opacity: 1;}
+}
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.05); opacity: 0.8; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes glow {
+    0% { text-shadow: 0 0 5px red, 0 0 10px red; }
+    50% { text-shadow: 0 0 10px red, 0 0 20px red; }
+    100% { text-shadow: 0 0 5px red, 0 0 10px red; }
 }
