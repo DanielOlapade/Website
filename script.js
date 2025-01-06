@@ -1,4 +1,3 @@
-// theme change
 const theme = document.getElementById("theme");
 theme.addEventListener("change", () => {
     if (theme.checked) {
@@ -11,7 +10,6 @@ theme.addEventListener("change", () => {
 });
 
 
-// theme storage
 let storedtheme = localStorage.getItem("theme");
 if (storedtheme === "darktheme") {
     document.body.classList.add("darktheme")
@@ -22,69 +20,35 @@ if (storedtheme === "darktheme") {
 };
 
 
-// playGame section
 const playGame = document.getElementById("playGame");
-const gameIntro = document.getElementById("gameIntro");
+const gameHeader = document.getElementById("gameHeader");
+const gameCancelBtn = document.getElementById("gameCancelBtn");
+const gamePlaySections = document.getElementsByClassName("gamePlaySections")
+const overlay = document.getElementById("overlay");
 const gameTitle = document.getElementById("gameTitle");
 const gameMotto = document.getElementById("gameMotto");
-const gameContent = document.getElementsByClassName("gameContent")
-const gameCloseBtn = document.getElementById("closeGameModal");
 
-let title = true;
-setInterval(() => {
-    playGame.textContent = title ? "CLICK TO PLAY DEAD OR WOUNDED" : "ITS'S A NUMBERS GAME";
-    title = !title;
-}, 3000);
+playGame.addEventListener("click", () => {
+    resetAnimation();
+    gameHeader.classList.add("slideDown");
+    gameTitle.classList.add("glowFlicker");
+    gameMotto.classList.add("pulse");
+    Array.from(gamePlaySections).forEach(el => el.classList.add("opacity"));
+});
 
-function resetVisibility (el) {
-    el.style.visibility = "hidden";
-    el.style.opacity = 0;
+function resetAnimation() {
+    gameHeader.classList.remove("slideDown");
+    gameTitle.classList.remove("glowFlicker");
+    gameMotto.classList.remove("pulse");
+    Array.from(gamePlaySections).forEach(el => el.classList.remove("opacity"));
 }
 
-function applyVisibility (el) {
-    el.style.visibility = "visible";
-    el.style.opacity = 1;
-}
-function applyAnimation (el, animation) {
-    el.style.animation = animation;
-}
+overlay.addEventListener("click", resetAnimation);
+gameCancelBtn.addEventListener("click", resetAnimation);
 
-function resetAnimation (el) {
-    el.style.animation = "none";
-    el.style.opacity = 0;
-    el.offsetHeight;
-}
 
-// //gameIntro
-function startgame() {
-    Array.from(gameContent).forEach(el => resetVisibility(el));
-    applyVisibility (gameIntro);
-    setTimeout(() => {
-        applyAnimation(gameTitle, "leftSlideIn 1.25s ease forwards, glow 2.25s ease-in-out infinite, flicker 0.5s 1.25s");
-        applyAnimation(gameMotto, "rightSlideIn 1.25s ease forwards, pulse 1s 1.25s ease-in-out");
-    }, 500);
-    setTimeout(()=>{
-        gameIntro.style.transition = "opacity 0.5s ease-out";
-        gameIntro.style.opacity = 0;
-    }, 3000);
-    setTimeout(()=>{
-        resetVisibility(gameIntro);
-        Array.from(gameContent).forEach(el => applyVisibility (el));
-        Array.from(gameContent).forEach(el => applyAnimation (el,"opacity 1s ease-in-out"));
-        ;
-    }, 3500);
-}
-playGame.addEventListener("click", startgame);
+//TIMER
 
-const exitGameModal = gameCloseBtn || overlay;
-exitGameModal.addEventListener("click", ()=> {
-    resetAnimation (gameTitle);
-    resetAnimation (gameMotto);
-})
-
-//game
-
-//timer
 function startCountDown (countDown) {
     const timeDisplay = document.getElementById("timeLeft");
 
@@ -107,7 +71,6 @@ function startCountDown (countDown) {
 startCountDown (60);
 
 
-//biosensor random images
 const biosensorProject = document.getElementById("biosensorProject");
 setInterval(() => {
     const randomIndex = Math.floor(Math.random() * 126) + 1;
@@ -115,7 +78,6 @@ setInterval(() => {
 }, 2000);
 
 
-//bio and exhibit modal images
 function modalImages(elementId, numImages, imagePath, getDescription) {
     const modalID = document.getElementById(elementId);
     for (let i = 1; i <= numImages; i++) {
@@ -155,17 +117,14 @@ function getBiosensorDescription(i) {
 }
 
 function getExhibitDescription(i) {
-    if ((i >= 1 && i <= 2) || (i >= 5 && i <= 8) || (i >= 28 && i <= 29) || (i === 23)) return "CAD render";
-    if (i >= 9 && i <= 10) return "Exhbit presentation";
-    if ((i >= 11 && i <= 22) || (i >= 24 && i <= 29)) return "Exhibit construction";
-    if ((i >= 11 && i <= 22) || (i >= 24 && i <= 29)) return "Exhibit construction";
-    if ((i === 30)) return "Exhibit alloted space";
-    if ((i === 3 || 4 || 26)) return "CAD Drawing";
+    if ((i === 24)) return "Exhibit alloted space";
+    if ((i >= 19 && i <= 23) || (i === 15)) return "CAD render";
+    if (i >= 1 && i <= 2) return "Exhbit presentation";
+    if ((i >= 3 && i <= 14) || (i >= 16 && i <= 18)) return "Exhibit construction";
 }
 modalImages("biosensorProjectimgs", 126, "Biosensor Project/img", getBiosensorDescription)
-modalImages("exhibitImgs", 30, "Exhibit Project/img", getExhibitDescription)
+modalImages("exhibitImgs", 24, "Exhibit Project/img", getExhibitDescription)
 
-//exhibit modal banner
 const exhibitModalBanner = document.getElementById("exhibitModalBanner");
 const exhibitBannerLeft = document.getElementById("exhibitBannerLeft");
 const exhibitBannerRight = document.getElementById("exhibitBannerRight");
@@ -189,7 +148,6 @@ exhibitBannerLeft.addEventListener("click", () => {
 const info = document.getElementById("info");
 const cancelBtn = document.getElementsByClassName("cancelBtn");
 const aboutModal = document.getElementById("aboutModal");
-const overlay = document.getElementsByClassName("overlay");
 const analysisProject = document.getElementById("analysisProject");
 const analysisProjectModal = document.getElementById("analysisProjectModal");
 const biosensorProjectmodal = document.getElementById("biosensorProjectmodal");
@@ -201,11 +159,11 @@ const gameModal = document.getElementById("gameModal");
 function modaltoggle(modal, action) {
     if (action === "show") {
         modal.classList.add("show");
-        Array.from(overlay).forEach(el => el.classList.add("show"));
+        overlay.classList.add("show");
 
     } else if (action === "hide") {
         modal.classList.remove("show");
-        Array.from(overlay).forEach(el => el.classList.remove("show"));
+        overlay.classList.remove("show");
     }
 }
 
@@ -216,17 +174,22 @@ exhibitProject.addEventListener("click", () => modaltoggle(exhibitModal, "show")
 playGame.addEventListener("click", () => modaltoggle(gameModal, "show"));
 
 Array.from(cancelBtn).forEach(el => el.addEventListener("click", () => {
-    Array.from(projectModal).forEach(el => modaltoggle(el, "hide"));
     modaltoggle(aboutModal, "hide")
+    modaltoggle(gameModal, "hide")
+    modaltoggle(exhibitModal, "hide")
+    modaltoggle(biosensorProjectmodal, "hide")
+    modaltoggle(analysisProjectModal, "hide")
 }));
 
-Array.from(overlay).forEach(el => el.addEventListener("click", () => {
-    Array.from(projectModal).forEach(el => modaltoggle(el, "hide"));
+overlay.addEventListener("click", () => {
     modaltoggle(aboutModal, "hide")
-}));
+    modaltoggle(gameModal, "hide")
+    modaltoggle(exhibitModal, "hide")
+    modaltoggle(biosensorProjectmodal, "hide")
+    modaltoggle(analysisProjectModal, "hide")
+});
 
 
-//scroll animation
 function observer(thresholdval) {
     return new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
@@ -248,9 +211,13 @@ views.forEach((view) => {
     viewobserver.observe(view);
 });
 
-let myName = document.getElementById("myName")
+
+
+
+//fix later
+let intro = document.getElementById("intro");
 let facts = [
-    "Hi, i'm Daniel.", "An Engineer-in-Training.", "A seeker of P Eng. level greatness.",
+    "Hi, I'm Daniel.", "An Engineer-in-Training.", "A seeker of P Eng. level greatness.",
     "A new plant parent.", "A croissant connoisseur.", "A meat pizza lover.",
     "A believer in third chances.", "An avid coffee drinker.", "A wannabe stand-up comedian.",
     "A collector of interesting facts.", "A fan of all things science.",
@@ -262,38 +229,69 @@ let facts = [
     "A passionate advocate for sustainability.", "A coffee-shop explorer.",
     "A strategic chess competitor.",
 ];
+
 let factCharIndex = 0;
-function typingFact(myName, factText) {
+let currentFactText = "";
+let typingInterval;
+let usedFacts = [];
+let isVisible = true;
+
+function typingFact(factText) {
+    currentFactText = factText;
     factCharIndex = 0;
-    myName.textContent = "";
-    let typingInterval = setInterval(() => {
-        if (factCharIndex < factText.length) {
-            myName.textContent += factText[factCharIndex];
+    intro.textContent = "";
+
+    typingInterval = setInterval(() => {
+        if (factCharIndex < currentFactText.length) {
+            intro.textContent += currentFactText[factCharIndex];
             factCharIndex++;
         } else {
             clearInterval(typingInterval);
         }
-    }, 95);
-};
-let usedFacts = [];
-function displayFacts() {
-    if (usedFacts.length === facts.length) {
-        usedFacts = [];
-    }
-    let index;
-    if (usedFacts.length === 0) {
-        index = 0;
-    } else {
-        do {
-            index = Math.floor(Math.random() * facts.length);
-        } while (usedFacts.includes(index))
-    }
-    const factText = facts[index];
-    typingFact(myName, factText);
-    console.log(factText);
-    setTimeout(() => {
-        usedFacts.push(index);
-        displayFacts();
-    }, factText.length * 95 + 6000);
+    }, 100);
 }
-displayFacts()
+
+function displayFacts() {
+    if (isVisible) {
+        if (usedFacts.length === facts.length) {
+            usedFacts = [];
+        }
+        let index;
+        if (usedFacts.length === 0) {
+            index = 0;
+        } else if (usedFacts.length === 1) {
+            index = 1;
+        } else {
+            do {
+                index = Math.floor(Math.random() * facts.length);
+            } while (usedFacts.includes(index));
+        }
+        const factText = facts[index];
+        typingFact(factText);
+        usedFacts.push(index);
+        setTimeout(() => displayFacts(), factText.length * 200 + 5000);
+    }
+}
+
+window.addEventListener("focus", () => {
+    isVisible = true;
+    if (factCharIndex < currentFactText.length) {
+        typingInterval = setInterval(() => {
+            if (factCharIndex < currentFactText.length) {
+                intro.textContent += currentFactText[factCharIndex];
+                factCharIndex++;
+            } else {
+                clearInterval(typingInterval);
+            }
+        }, 100);
+    } else {
+        displayFacts();
+    }
+});
+
+window.addEventListener("blur", () => {
+    isVisible = false;
+    clearInterval(typingInterval);
+});
+
+displayFacts();
