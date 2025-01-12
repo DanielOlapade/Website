@@ -18,9 +18,9 @@ body.darktheme {
     --col3: rgb(176, 176, 176);
     --col2: rgb(14, 14, 14);
     --col1: rgb(0, 0, 0);
-    --col7: rgb(255, 99, 71);
-    --col8: blue;
-    --col9: darkblue;
+    --col7: rgba(189, 71, 144, 0.777);
+    --col8: rgb(182, 119, 31);
+    --col9: rgb(255, 119, 0);
 }
 
 html,
@@ -349,8 +349,7 @@ header {
 #aboutModal.show,
 #analysisProjectModal.show,
 #biosensorProjectmodal.show,
-#exhibitModal.show,
-#gameModal.show {
+#exhibitModal.show {
     opacity: 1;
     visibility: visible;
     z-index: 1000;
@@ -360,8 +359,7 @@ header {
 #aboutModal,
 #analysisProjectModal,
 #biosensorProjectmodal,
-#exhibitModal,
-#gameModal {
+#exhibitModal {
     z-index: -1000;
 }
 
@@ -650,155 +648,6 @@ footer {
     justify-content: space-between;
 }
 
-#playGame {
-    cursor: pointer;
-    transition: font-weight 0.5s ease-in-out;
-}
-
-#playGame:hover {
-    font-weight: 550;
-}
-
-#gameHeader {
-    display: flex;
-    opacity: 0;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-#gameTitle {
-    margin: 0;
-    font-size: 3rem;
-    font-family: "Creepster", serif;
-}
-
-#gameMotto {
-    margin-top: -0.5rem;
-    margin-bottom: 0rem;
-    font-size: 1.5rem;
-    font-family: "Joti One", serif;
-}
-
-#gameOptions {
-    display: flex;
-    gap: 1rem;
-    margin: 2rem;
-}
-
-.controlBtn {
-    height: 2rem;
-    width: 2rem;
-    border: none;
-    font-size: 0.8rem;
-    border-radius: 50%;
-    color: var(--col4);
-    background-color: var(--col6);
-    display: flex;
-    cursor: pointer;
-    align-items: center;
-    justify-content: center;
-    transition: background 0.5s ease-in-out, transform 0.25s ease-in-out;
-}
-
-.controlBtn:hover {
-    background-color: var(--col2);
-}
-
-.controlBtn:active {
-    transform: scale(0.8);
-}
-
-#gamePlay {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-}
-
-.gamePlaySections {
-    opacity: 0;
-}
-
-#timerLevelContainer {
-    display: grid;
-    grid-template-rows: repeat(2, 1fr);
-    gap: 3rem;
-    justify-items: center;
-}
-
-#timer {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    box-sizing: border-box;
-    border: 0.5rem solid var(--col7);
-    border-radius: 2rem;
-}
-
-#timeLeft {
-    font-size: 5rem;
-    font-family: monospace;
-    text-shadow: 0 0.3rem 0.3rem var(--col6);
-}
-
-#levelOptions {
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    justify-content: center;
-    align-items: center;
-}
-
-#levels {
-    margin: 0;
-    display: flex;
-    gap: 2rem;
-    align-items: center;
-}
-
-.levelType {
-    cursor: pointer;
-    display: flex;
-    font-size: 1.3rem;
-    font-weight: 500;
-    padding: 1rem;
-    background-color: var(--col8);
-    border-radius: 1rem;
-    align-items: center;
-    justify-content: space-evenly;
-    width: 100%;
-    transition: background-color 0.2s ease-in;
-}
-
-.levelType:hover {
-    background-color: var(--col9);
-}
-
-#levelHeader {
-    font-size: 0.8rem;
-}
-
-.slideDown {
-    animation: slideDown 0.8s 0.3s forwards;
-}
-
-.glowFlicker {
-    animation: glow 0.8s 0.3s, flicker 0.5s 0.8s;
-}
-
-.pulse {
-    animation: pulse 0.8s 0.8s forwards;
-}
-
-.opacity {
-    animation: opacity 1s 1.6s forwards;
-}
-
-.noAnimation {
-    animation: none;
-}
 
 @keyframes slideUp {
     from {
@@ -819,64 +668,5 @@ footer {
 
     to {
         opacity: 1;
-    }
-}
-
-@keyframes flicker {
-    0% {
-        color: red;
-    }
-
-    50% {
-        color: black;
-    }
-
-    100% {
-        color: red;
-    }
-}
-
-
-@keyframes slideDown {
-    from {
-        transform: translateY(-2rem);
-        opacity: 0;
-    }
-
-    to {
-        transform: translateY(0rem);
-        opacity: 1;
-    }
-}
-
-
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-        opacity: 1;
-    }
-
-    50% {
-        transform: scale(1.05);
-        opacity: 0.8;
-    }
-
-    100% {
-        transform: scale(1);
-        opacity: 1;
-    }
-}
-
-@keyframes glow {
-    0% {
-        text-shadow: 0 0 5px red, 0 0 10px red;
-    }
-
-    50% {
-        text-shadow: 0 0 10px red, 0 0 20px red;
-    }
-
-    100% {
-        text-shadow: 0 0 5px red, 0 0 10px red;
     }
 }

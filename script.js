@@ -9,7 +9,6 @@ theme.addEventListener("change", () => {
     }
 });
 
-
 let storedtheme = localStorage.getItem("theme");
 if (storedtheme === "darktheme") {
     document.body.classList.add("darktheme")
@@ -18,58 +17,6 @@ if (storedtheme === "darktheme") {
     document.body.classList.remove("darktheme");
     theme.checked = false;
 };
-
-
-const playGame = document.getElementById("playGame");
-const gameHeader = document.getElementById("gameHeader");
-const gameCancelBtn = document.getElementById("gameCancelBtn");
-const gamePlaySections = document.getElementsByClassName("gamePlaySections")
-const overlay = document.getElementById("overlay");
-const gameTitle = document.getElementById("gameTitle");
-const gameMotto = document.getElementById("gameMotto");
-
-playGame.addEventListener("click", () => {
-    resetAnimation();
-    gameHeader.classList.add("slideDown");
-    gameTitle.classList.add("glowFlicker");
-    gameMotto.classList.add("pulse");
-    Array.from(gamePlaySections).forEach(el => el.classList.add("opacity"));
-});
-
-function resetAnimation() {
-    gameHeader.classList.remove("slideDown");
-    gameTitle.classList.remove("glowFlicker");
-    gameMotto.classList.remove("pulse");
-    Array.from(gamePlaySections).forEach(el => el.classList.remove("opacity"));
-}
-
-overlay.addEventListener("click", resetAnimation);
-gameCancelBtn.addEventListener("click", resetAnimation);
-
-
-//TIMER
-
-function startCountDown (countDown) {
-    const timeDisplay = document.getElementById("timeLeft");
-
-    const interval = setInterval(() => {
-        if (countDown <= 0) {
-            clearInterval(interval);
-            timeDisplay.textContent = "00:00:00";
-            return;
-        }
-
-        const hours = Math.floor(countDown/3600);
-        const mins = Math.floor((countDown % 3600) / 60);
-        const secs = countDown % 60;
-        timeDisplay.textContent = `${String(hours).padStart(2, '0')}:${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
-
-        countDown--;
-
-    }, 1000)
-}
-startCountDown (60);
-
 
 const biosensorProject = document.getElementById("biosensorProject");
 setInterval(() => {
@@ -135,16 +82,15 @@ img.loading = "lazy"
 exhibitModalBanner.appendChild(img);
 exhibitBannerRight.addEventListener("click", () => {
     i++;
-    if (i > 4) i = 1;
+    if (i > 3) i = 1;
     img.src = `Exhibit Project/banner (${i}).jpeg`;
 });
 exhibitBannerLeft.addEventListener("click", () => {
     i--;
-    if (i < 1) i = 4;
+    if (i < 1) i = 3;
     img.src = `Exhibit Project/banner (${i}).jpeg`;
 });
 
-// modal selection
 const info = document.getElementById("info");
 const cancelBtn = document.getElementsByClassName("cancelBtn");
 const aboutModal = document.getElementById("aboutModal");
@@ -154,7 +100,6 @@ const biosensorProjectmodal = document.getElementById("biosensorProjectmodal");
 const projectModal = document.getElementsByClassName("projectModal");
 const exhibitModal = document.getElementById("exhibitModal");
 const exhibitProject = document.getElementById("exhibitProject");
-const gameModal = document.getElementById("gameModal");
 
 function modaltoggle(modal, action) {
     if (action === "show") {
@@ -171,11 +116,9 @@ info.addEventListener("click", () => modaltoggle(aboutModal, "show"));
 analysisProject.addEventListener("click", () => modaltoggle(analysisProjectModal, "show"));
 biosensorProject.addEventListener("click", () => { modaltoggle(biosensorProjectmodal, "show") });
 exhibitProject.addEventListener("click", () => modaltoggle(exhibitModal, "show"));
-playGame.addEventListener("click", () => modaltoggle(gameModal, "show"));
 
 Array.from(cancelBtn).forEach(el => el.addEventListener("click", () => {
     modaltoggle(aboutModal, "hide")
-    modaltoggle(gameModal, "hide")
     modaltoggle(exhibitModal, "hide")
     modaltoggle(biosensorProjectmodal, "hide")
     modaltoggle(analysisProjectModal, "hide")
@@ -183,7 +126,6 @@ Array.from(cancelBtn).forEach(el => el.addEventListener("click", () => {
 
 overlay.addEventListener("click", () => {
     modaltoggle(aboutModal, "hide")
-    modaltoggle(gameModal, "hide")
     modaltoggle(exhibitModal, "hide")
     modaltoggle(biosensorProjectmodal, "hide")
     modaltoggle(analysisProjectModal, "hide")
@@ -211,10 +153,6 @@ views.forEach((view) => {
     viewobserver.observe(view);
 });
 
-
-
-
-//fix later
 let intro = document.getElementById("intro");
 let facts = [
     "Hi, I'm Daniel.", "An Engineer-in-Training.", "A seeker of P Eng. level greatness.",
