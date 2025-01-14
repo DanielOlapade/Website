@@ -5,9 +5,6 @@
     --col4: rgb(0, 0, 0);
     --col5: rgba(0, 0, 0, 0.70);
     --col6: rgba(0, 0, 0, 0.25);
-    --col7: rgb(255, 99, 71);
-    --col8: blue;
-    --col9: darkblue;
     font-size: 15px;
 }
 
@@ -18,9 +15,6 @@ body.darktheme {
     --col3: rgb(176, 176, 176);
     --col2: rgb(14, 14, 14);
     --col1: rgb(0, 0, 0);
-    --col7: rgba(189, 71, 144, 0.777);
-    --col8: rgb(182, 119, 31);
-    --col9: rgb(255, 119, 0);
 }
 
 html,
@@ -40,6 +34,7 @@ body {
     letter-spacing: 0.02rem;
     overflow-x: hidden;
     scroll-behavior: smooth;
+    will-change: background, color;
     transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
     scrollbar-width: none;
     margin-left: 2rem;
@@ -82,6 +77,7 @@ header {
 .headerContent {
     cursor: pointer;
     transition: font-weight 0.5s ease-in-out;
+    will-change: font-weight;
 }
 
 .headerContent:hover {
@@ -101,6 +97,7 @@ header {
     border-radius: 1rem;
     cursor: pointer;
     transition: transform 0.5s ease-in-out;
+    will-change: transform;
 }
 
 .themeToggleBtn:hover {
@@ -116,6 +113,7 @@ header {
     left: 0.1rem;
     background: var(--col1);
     border-radius: 50%;
+    will-change: transform;
     transition: transform 0.5s cubic-bezier(0.85, 0.05, 0.18, 1.35);
 }
 
@@ -163,6 +161,7 @@ header {
     overflow: hidden;
     height: 19rem;
     transition: transform 0.5s ease-in-out;
+    will-change: transform;
 }
 
 .projectContent video,
@@ -181,6 +180,7 @@ header {
     bottom: 0.5rem;
     font-size: 0.8rem;
     opacity: 0;
+    will-change: opacity;
     transition: opacity 0.5s ease-in-out;
 }
 
@@ -212,6 +212,7 @@ header {
     background: var(--col5);
     visibility: hidden;
     transition: opacity 0.5s ease-in-out;
+    will-change: opacity;
 }
 
 .cancelBtn {
@@ -222,11 +223,14 @@ header {
     display: flex;
     justify-content: center;
     top: 0.5rem;
+    padding: 0.1rem;
     left: calc(100% - 1.5rem);
     cursor: pointer;
     font-size: 1rem;
     color: var(--col4);
+    will-change: transform;
     transition: transform 0.5s ease-in-out, color 0.5s ease-in-out;
+    z-index: 1000;
 }
 
 
@@ -250,14 +254,15 @@ header {
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.5s ease-in-out;
+    will-change: opacity;
     overflow-x: hidden;
     overflow-y: auto;
     scrollbar-width: none;
+    scroll-behavior: smooth;
 }
 
 .aboutModalContainer {
     display: grid;
-    overflow: hidden;
     grid-template-columns: 20% 80%;
     width: calc(100% - 4rem);
     margin-top: 3rem;
@@ -316,6 +321,7 @@ header {
     background-color: var(--col3);
     height: 0.125rem;
     display: inline-block;
+    will-change: font-weight, width;
     transition: font-weight 0.5s ease-in-out, width 0.8s ease-in-out;
 }
 
@@ -332,6 +338,7 @@ header {
 .view {
     opacity: 0;
     transform: translateY(2rem);
+    will-change: transform, opacity;
     transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
 }
 
@@ -366,8 +373,8 @@ header {
 .projectModal {
     position: fixed;
     width: calc(100% - 4rem);
-    height: calc(100% - 4.9rem);
-    top: 2.7rem;
+    height: calc(100% - 4.5rem);
+    top: 2.5rem;
     left: 50%;
     transform: translateX(-50%);
     background: var(--col1);
@@ -377,6 +384,7 @@ header {
     border-radius: 0.5rem;
     opacity: 0;
     visibility: hidden;
+    will-change: opacity;
     transition: opacity 0.5s ease-in-out;
     overflow-x: hidden;
     overflow-y: auto;
@@ -417,13 +425,6 @@ header {
 .modalRoleDuration {
     display: flex;
     justify-content: space-between;
-    width: 100%;
-}
-
-.modalAcknowledgement {
-    display: flex;
-    flex-direction: row;
-    gap: 1rem;
     width: 100%;
 }
 
@@ -481,16 +482,17 @@ header {
     cursor: pointer;
     margin: 0.5rem;
     background: var(--col3);
+    will-change: transform;
     transition: transform 0.5s ease-in-out;
 }
 
 #exhibitBannerRight {
-    right: 10px;
+    right: 0.7rem;
     color: var(--col1);
 }
 
 #exhibitBannerLeft {
-    left: 10px;
+    left: 0.7rem;
     color: var(--col1);
 }
 
@@ -541,6 +543,7 @@ header {
 }
 
 .projectModalFooter {
+    text-align: center;
     margin-bottom: 3rem;
     margin-top: -1rem;
 }
@@ -572,6 +575,7 @@ header {
     border-radius: 0.5rem;
     overflow: hidden;
     height: 13rem;
+    will-change: transform;
     transition: transform 0.5s ease-in-out;
 }
 
@@ -597,6 +601,7 @@ header {
     padding: 0.4rem;
     border-radius: 0.5rem;
     background: var(--col1);
+    will-change: opacity;
     transition: opacity 0.5s ease-in-out;
 }
 
@@ -636,6 +641,7 @@ footer {
 }
 
 #backup a {
+    will-change: transform;
     transition: transform 0.5s ease;
 }
 
@@ -668,5 +674,823 @@ footer {
 
     to {
         opacity: 1;
+    }
+}
+
+@media (max-width: 767px) {
+    :root {
+        font-size: 14px;
+    }
+    
+    body {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+    
+    #intro {
+        font-size: 3rem;
+        min-height: 7.2rem;
+    }
+    
+    #projects {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    #aboutModal {
+        width: 95%;
+        max-height: calc(100% - 3.5rem);
+        height: auto;
+        left: 50%;
+    }
+    
+    .aboutModalContainer {
+        display: flex;
+        flex-direction: column;
+        width: calc(100% - 2rem);
+        height: calc(100% - 3.5rem);
+        gap: 1rem;
+    }
+    
+    .aboutModalContent {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .aboutModalColumnV1 {
+        margin: 0;
+        display: grid;
+        grid-template-columns: auto;
+        gap: 0.1rem;
+    }
+
+    .projectContent {
+        height: 22rem;
+    }
+    
+    .projectModal {
+        position: fixed;
+        width: calc(100% - 2rem);
+        height: calc(100% - 3.5rem);
+    }
+    
+    .projectModalContainer {
+        width: calc(100% - 2rem);
+    }
+    
+    .modalTitleContainerV1 {
+        gap: 3rem;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .modalTitleContainerV2 {
+        gap: 3rem;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .projectModalTitle {
+        font-size: 3.5rem;
+    }
+    
+    .analysisProjectImgsGrid {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    .exhibitModalGridV1 {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    .projectModalHeader {
+        display: flex;
+        font-size: 3rem;
+        margin: 0;
+        font-weight: 550;
+        color: var(--col3);
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .projectModalGrid2 {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .projectModalGrid3 {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .projectModalImgsV1 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto;
+        gap: 2rem;
+    }
+    
+    footer {
+        opacity: 0;
+        margin-bottom: 0.5rem;
+        font-size: 0.8rem;
+        animation: opacity 0.5s 2.2s ease-in-out forwards;
+    }
+    
+    #backup {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+    }
+    
+    .backup-opacity {
+        margin-top: 2rem;
+        visibility: visible;
+    }
+    
+    #backup a {
+        will-change: transform;
+        transition: transform 0.5s ease;
+    }
+    
+    #backup a:hover {
+        transform: scale(1.1);
+    }
+
+    .cancelBtn {
+        width: 0.8rem;
+        height: 0.8rem;
+        font-size: 0.8rem;
+        left: calc(100% - 1rem);
+    }
+    
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    :root {
+        --col1: rgb(255, 255, 255);
+        --col2: rgb(248, 248, 248);
+        --col3: rgb(87, 87, 87);
+        --col4: rgb(0, 0, 0);
+        --col5: rgba(0, 0, 0, 0.70);
+        --col6: rgba(0, 0, 0, 0.25);
+        font-size: 15px;
+    }
+    
+    body.darktheme {
+        --col6: rgba(255, 255, 255, 0.298);
+        --col5: rgba(30, 30, 30, 0.80);
+        --col4: rgb(255, 255, 255);
+        --col3: rgb(176, 176, 176);
+        --col2: rgb(14, 14, 14);
+        --col1: rgb(0, 0, 0);
+    }
+    
+    html,
+    body {
+        height: 100%;
+        margin: 0;
+        overflow: auto;
+    }
+    
+    body {
+        display: flex;
+        flex-direction: column;
+        font-family: "Inter", serif;
+        font-weight: 350;
+        background: var(--col1);
+        color: var(--col4);
+        letter-spacing: 0.02rem;
+        overflow-x: hidden;
+        scroll-behavior: smooth;
+        will-change: background, color;
+        transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
+        scrollbar-width: none;
+        margin-left: 2rem;
+        margin-right: 2rem;
+    }
+    
+    main {
+        flex-grow: 1;
+    }
+    
+    a {
+        text-decoration: none;
+        color: var(--col3);
+        font-weight: 450;
+    }
+    
+    li {
+        margin-top: 0.5rem;
+        margin-left: -0.5rem;
+    }
+    
+    .subList {
+        font-size: 0.88rem;
+        color: var(--col3);
+    }
+    
+    header {
+        margin-top: 0.5rem;
+        margin-left: 0.08rem;
+        margin-right: 0.08rem;
+        height: 2rem;
+        display: flex;
+        font-size: 0.8rem;
+        justify-content: space-between;
+        align-items: center;
+        opacity: 0;
+        animation: opacity 0.5s 2.2s ease-in-out forwards;
+    }
+    
+    .headerContent {
+        cursor: pointer;
+        transition: font-weight 0.5s ease-in-out;
+        will-change: font-weight;
+    }
+    
+    .headerContent:hover {
+        font-weight: 550;
+    }
+    
+    #theme {
+        display: none;
+    }
+    
+    .themeToggleBtn {
+        display: flex;
+        position: relative;
+        width: 1.8rem;
+        height: 1rem;
+        background-color: var(--col3);
+        border-radius: 1rem;
+        cursor: pointer;
+        transition: transform 0.5s ease-in-out;
+        will-change: transform;
+    }
+    
+    .themeToggleBtn:hover {
+        transform: scale(1.03);
+    }
+    
+    .themeToggleBtn::after {
+        content: "";
+        position: absolute;
+        height: 0.8rem;
+        width: 0.8rem;
+        top: 0.1rem;
+        left: 0.1rem;
+        background: var(--col1);
+        border-radius: 50%;
+        will-change: transform;
+        transition: transform 0.5s cubic-bezier(0.85, 0.05, 0.18, 1.35);
+    }
+    
+    #theme:checked~.themeToggleBtn::after {
+        transform: translateX(0.8rem);
+    }
+    
+    .subtleHeader {
+        color: var(--col3);
+        font-size: 0.8rem;
+        margin-top: 0;
+        margin-bottom: 0;
+        opacity: 0;
+        animation: slideUp 1.2s 1.4s ease-in-out forwards;
+    }
+    
+    #intro {
+        font-weight: 550;
+        font-size: 3.5rem;
+        min-height: 4.5rem;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        color: var(--col4);
+        margin-top: 11rem;
+        margin-bottom: 8rem;
+    }
+    
+    
+    #projects {
+        margin-top: 0.8rem;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto;
+        gap: 2rem;
+        opacity: 0;
+        animation: slideUp 1.2s 1.5s ease-in-out forwards;
+    }
+    
+    .projectContent {
+        display: flex;
+        position: relative;
+        cursor: pointer;
+        border-radius: 0.5rem;
+        overflow: hidden;
+        height: 19rem;
+        transition: transform 0.5s ease-in-out;
+        will-change: transform;
+    }
+    
+    .projectContent video,
+    .projectContent img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+    
+    .projectContentText {
+        position: absolute;
+        display: flex;
+        gap: 0.3rem;
+        left: 0.5rem;
+        bottom: 0.5rem;
+        font-size: 0.8rem;
+        opacity: 0;
+        will-change: opacity;
+        transition: opacity 0.5s ease-in-out;
+    }
+    
+    .projectContentText span {
+        padding: 0.4rem;
+        border-radius: 0.5rem;
+        background: var(--col1);
+    }
+    
+    .projectContent:hover {
+        transform: scale(0.985);
+    }
+    
+    .projectContent:active {
+        transform: scale(0.965);
+    }
+    
+    .projectContent:hover .projectContentText {
+        opacity: 1;
+    }
+    
+    #overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        opacity: 0;
+        background: var(--col5);
+        visibility: hidden;
+        transition: opacity 0.5s ease-in-out;
+        will-change: opacity;
+    }
+    
+    .cancelBtn {
+        position: sticky;
+        width: 1rem;
+        height: 1rem;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        top: 0.5rem;
+        padding: 0.1rem;
+        left: calc(100% - 1.5rem);
+        cursor: pointer;
+        font-size: 1rem;
+        color: var(--col4);
+        will-change: transform;
+        transition: transform 0.5s ease-in-out, color 0.5s ease-in-out;
+        z-index: 1000;
+    }
+    
+    
+    .cancelBtn:hover {
+        transform: scale(1.1);
+        color: red;
+    }
+    
+    #aboutModal {
+        position: fixed;
+        width: 70%;
+        height: auto;
+        top: 2.5rem;
+        left: 50%;
+        transform: translateX(-50%);
+        background: var(--col1);
+        color: var(--col4);
+        display: flex;
+        flex-direction: column;
+        border-radius: 0.5rem;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.5s ease-in-out;
+        will-change: opacity;
+        overflow-x: hidden;
+        overflow-y: auto;
+        scrollbar-width: none;
+        scroll-behavior: smooth;
+    }
+    
+    .aboutModalContainer {
+        display: grid;
+        grid-template-columns: 20% 80%;
+        width: calc(100% - 4rem);
+        margin-top: 3rem;
+        align-self: center;
+    }
+    
+    .aboutModalHeader {
+        margin: 0;
+        font-weight: 550;
+    }
+    
+    .aboutModalContent {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .aboutModalContent p {
+        margin: 0;
+        display: flex;
+    }
+    
+    .aboutModalColumnV1 {
+        margin: 0;
+        display: grid;
+        grid-template-columns: 10% 40% 50%;
+        gap: 0.5rem;
+        grid-template-rows: auto;
+    }
+    
+    .aboutModalColumnV1 p {
+        margin: 0;
+    }
+    
+    .contacts {
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        gap: 4rem;
+        margin: 3rem;
+    }
+    
+    .contacts a,
+    .modalHeaderContent {
+        position: relative;
+        display: inline-block;
+    }
+    
+    .contacts a::after,
+    .modalHeaderContent::after {
+        content: "";
+        position: absolute;
+        bottom: -0.125rem;
+        left: 0;
+        width: 0;
+        background-color: var(--col3);
+        height: 0.125rem;
+        display: inline-block;
+        will-change: font-weight, width;
+        transition: font-weight 0.5s ease-in-out, width 0.8s ease-in-out;
+    }
+    
+    .contacts a:hover,
+    .modalHeaderContent:hover {
+        width: 100;
+    }
+    
+    .contacts a:hover::after,
+    .modalHeaderContent:hover::after {
+        width: 100%;
+    }
+    
+    .view {
+        opacity: 0;
+        transform: translateY(2rem);
+        will-change: transform, opacity;
+        transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+    }
+    
+    .inview {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    .outviewTop {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    #overlay.show,
+    #aboutModal.show,
+    #analysisProjectModal.show,
+    #biosensorProjectmodal.show,
+    #exhibitModal.show {
+        opacity: 1;
+        visibility: visible;
+        z-index: 1000;
+    }
+    
+    #overlay,
+    #aboutModal,
+    #analysisProjectModal,
+    #biosensorProjectmodal,
+    #exhibitModal {
+        z-index: -1000;
+    }
+    
+    .projectModal {
+        position: fixed;
+        width: calc(100% - 4rem);
+        height: calc(100% - 4.5rem);
+        top: 2.5rem;
+        left: 50%;
+        transform: translateX(-50%);
+        background: var(--col1);
+        color: var(--col4);
+        display: flex;
+        flex-direction: column;
+        border-radius: 0.5rem;
+        opacity: 0;
+        visibility: hidden;
+        will-change: opacity;
+        transition: opacity 0.5s ease-in-out;
+        overflow-x: hidden;
+        overflow-y: auto;
+        scrollbar-width: none;
+        scroll-behavior: smooth;
+    }
+    
+    .projectModalContainer {
+        width: calc(100% - 4rem);
+        margin-top: 2rem;
+        height: auto;
+        align-self: center;
+    }
+    
+    .modalTitleContainerV1 {
+        gap: 2rem;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        align-items: last baseline;
+    }
+    
+    .modalTitleContainerV2 {
+        gap: 10%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .projectModalAbout {
+        margin: 0;
+    }
+    
+    .projectModalTitle {
+        font-size: 4.3rem;
+        margin: 0;
+        font-weight: 550;
+    }
+    
+    .modalRoleDuration {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+    
+    .projectModalBannerV1 video,
+    .projectModalBannerV1 img {
+        width: 100%;
+        height: 32rem;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 0.5rem;
+    }
+    
+    .analysisProjectImgs img {
+        width: 100%;
+        height: 30rem;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 0.5rem;
+    }
+    
+    .analysisProjectImgsGrid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: auto;
+        gap: 2rem;
+    }
+    
+    .exhibitModalGridV1 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+    
+    #exhibitModalBanner {
+        display: flex;
+        justify-content: center;
+        border-radius: 0.5rem;
+        position: relative;
+        width: 100%;
+    }
+    
+    #exhibitBannerLeft,
+    #exhibitBannerRight {
+        display: flex;
+        position: absolute;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        width: 0.8rem;
+        height: 0.8rem;
+        border-radius: 50%;
+        padding: 0.75rem;
+        font-size: 0.75rem;
+        top: 50%;
+        cursor: pointer;
+        margin: 0.5rem;
+        background: var(--col3);
+        will-change: transform;
+        transition: transform 0.5s ease-in-out;
+    }
+    
+    #exhibitBannerRight {
+        right: 0.7rem;
+        color: var(--col1);
+    }
+    
+    #exhibitBannerLeft {
+        left: 0.7rem;
+        color: var(--col1);
+    }
+    
+    #exhibitBannerRight:hover,
+    #exhibitBannerLeft:hover {
+        transform: scale(1.05);
+    }
+    
+    
+    .projectModalSubHeader {
+        font-size: 1.5rem;
+        margin: 0;
+        font-weight: 550;
+    }
+    
+    .projectModalHeader {
+        display: flex;
+        font-size: 3rem;
+        margin: 0;
+        font-weight: 550;
+        color: var(--col3);
+        justify-content: center;
+        align-items: center;
+    }
+    
+    
+    .projectModalGrid2 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+    
+    .projectModalGrid2 div {
+        background-color: var(--col2);
+        padding: 1rem;
+        border-radius: 0.5rem;
+    }
+    
+    .projectModalCenter {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+    }
+    
+    .projectModalTxtAlign {
+        text-align: center;
+    }
+    
+    .projectModalFooter {
+        text-align: center;
+        margin-bottom: 3rem;
+        margin-top: -1rem;
+    }
+    
+    .projectModalGrid3 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        margin-top: 1rem;
+        gap: 2rem;
+    }
+    
+    .projectModalGrid3>div {
+        background-color: var(--col2);
+        padding: 1rem;
+        border-radius: 0.5rem;
+    }
+    
+    .projectModalImgsV1 {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: auto;
+        gap: 2rem;
+    }
+    
+    .modalImgContainer {
+        display: flex;
+        position: relative;
+        cursor: pointer;
+        border-radius: 0.5rem;
+        overflow: hidden;
+        height: 13rem;
+        will-change: transform;
+        transition: transform 0.5s ease-in-out;
+    }
+    
+    .modalImgContainer img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+    
+    .modalImgDescription {
+        position: absolute;
+        display: inline-flex;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 0.5rem;
+        width: auto;
+        white-space: nowrap;
+        text-align: center;
+        font-size: 0.8rem;
+        line-height: normal;
+        opacity: 0;
+        padding: 0.4rem;
+        border-radius: 0.5rem;
+        background: var(--col1);
+        will-change: opacity;
+        transition: opacity 0.5s ease-in-out;
+    }
+    
+    .modalImgContainer:hover {
+        z-index: 1000;
+    }
+    
+    .modalImgContainer:hover .modalImgDescription {
+        opacity: 1;
+    }
+    
+    .modalImgContainer:active {
+        transform: scale(1.7);
+    }
+    
+    .modalImgContainer:active .modalImgDescription {
+        opacity: 0;
+    }
+    
+    footer {
+        opacity: 0;
+        margin-bottom: 0.5rem;
+        font-size: 0.8rem;
+        animation: opacity 0.5s 2.2s ease-in-out forwards;
+    }
+    
+    #backup {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+    }
+    
+    .backup-opacity {
+        visibility: hidden;
+    }
+    
+    #backup a {
+        will-change: transform;
+        transition: transform 0.5s ease;
+    }
+    
+    #backup a:hover {
+        transform: scale(1.1);
+    }
+    
+    #footer {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+@media (min-width: 1281px) {
+    :root {
+        font-size: 16px;
     }
 }

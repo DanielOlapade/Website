@@ -21,7 +21,7 @@ if (storedtheme === "darktheme") {
 const biosensorProject = document.getElementById("biosensorProject");
 setInterval(() => {
     const randomIndex = Math.floor(Math.random() * 126) + 1;
-    biosensorProject.src = `Biosensor Project/img (${randomIndex}).jpg`;
+    biosensorProject.src = `biosensorproject/img(${randomIndex}).jpg`;
 }, 2000);
 
 
@@ -38,7 +38,7 @@ function modalImages(elementId, numImages, imagePath, getDescription) {
         modalImgContainer.classList.add("view");
         modalImgContainer.style.transition = "opacity 0.8s ease-in-out, transform 0.8s ease-in-out";
         const img = document.createElement("img");
-        img.src = `${imagePath} (${i}).jpg`;
+        img.src = `${imagePath}(${i}).jpg`;
         img.loading = "lazy";
 
         modalImgContainer.appendChild(img);
@@ -69,26 +69,26 @@ function getExhibitDescription(i) {
     if (i >= 1 && i <= 2) return "Exhbit presentation";
     if ((i >= 3 && i <= 14) || (i >= 16 && i <= 18)) return "Exhibit construction";
 }
-modalImages("biosensorProjectimgs", 126, "Biosensor Project/img", getBiosensorDescription)
-modalImages("exhibitImgs", 24, "Exhibit Project/img", getExhibitDescription)
+modalImages("biosensorProjectimgs", 126, "biosensorproject/img", getBiosensorDescription)
+modalImages("exhibitImgs", 24, "exhibitproject/img", getExhibitDescription)
 
 const exhibitModalBanner = document.getElementById("exhibitModalBanner");
 const exhibitBannerLeft = document.getElementById("exhibitBannerLeft");
 const exhibitBannerRight = document.getElementById("exhibitBannerRight");
 const img = document.createElement("img");
 let i = 1;
-img.src = `Exhibit Project/banner (${i}).jpeg`;
+img.src = `exhibitproject/banner(${i}).jpeg`;
 img.loading = "lazy"
 exhibitModalBanner.appendChild(img);
 exhibitBannerRight.addEventListener("click", () => {
     i++;
     if (i > 3) i = 1;
-    img.src = `Exhibit Project/banner (${i}).jpeg`;
+    img.src = `exhibitproject/banner(${i}).jpeg`;
 });
 exhibitBannerLeft.addEventListener("click", () => {
     i--;
     if (i < 1) i = 3;
-    img.src = `Exhibit Project/banner (${i}).jpeg`;
+    img.src = `exhibitproject/banner(${i}).jpeg`;
 });
 
 const info = document.getElementById("info");
@@ -131,6 +131,14 @@ overlay.addEventListener("click", () => {
     modaltoggle(analysisProjectModal, "hide")
 });
 
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+        modaltoggle(aboutModal, "hide")
+        modaltoggle(exhibitModal, "hide")
+        modaltoggle(biosensorProjectmodal, "hide")
+        modaltoggle(analysisProjectModal, "hide")
+    }
+});
 
 function observer(thresholdval) {
     return new IntersectionObserver((entries) => {
@@ -233,3 +241,6 @@ window.addEventListener("blur", () => {
 });
 
 displayFacts();
+
+document.getElementById('copyright').textContent = `© ${new Date().getFullYear()} DANIEL OLAPADE`;
+// up and down with button??scrolliing

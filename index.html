@@ -3,13 +3,20 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="description" content="Portfolio of Daniel Olapade">
+    <title>Porfolio - Daniel Olapade</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
+    <link rel="manifest" href="./site.webmanifest">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Creepster&family=Fredoka:wght@300..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Joti+One&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
         rel="stylesheet">
-        <script src="https://cdn.jsdelivr.net/npm/tsparticles-confetti@2.9.3/tsparticles.confetti.bundle.min.js"></script>    <script defer src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
     <script src="https://kit.fontawesome.com/a1bcc378f1.js" crossorigin="anonymous"></script>
 </head>
 
@@ -28,8 +35,9 @@
 
         <p class="subtleHeader">FEATURED PROJECTS</p>
         <div id="projects" class="view">
-            <div id="analysisProject" class="projectContent">
-                <video src="Sports Analysis Project/video (1).mp4" autoplay loop muted disablePictureInPicture></video>
+            <div id="analysisProject" class="projectContent view">
+                <video src="sportsanalysisproject/video(1).mp4" autoplay loop muted disablePictureInPicture
+                    loading="lazy">Your browser does not support the video tag. Please <a href="sportsanalysisproject/video(1).mp4"> download the video</a> to watch it</video>
                 <div class="projectContentText">
                     <span>Sports Analysis System</span>
                     <span>Case Study</span>
@@ -37,8 +45,8 @@
                 </div>
             </div>
 
-            <div class="projectContent">
-                <img id="biosensorProject" src="Biosensor Project/img (1).jpg">
+            <div class="projectContent view">
+                <img loading="lazy" id="biosensorProject" src="biosensorproject/img(1).jpg">
                 <div class="projectContentText">
                     <span>Biosensor Project</span>
                     <span>U of M Materials Lab</span>
@@ -46,9 +54,9 @@
                 </div>
             </div>
 
-            <div class="projectContent">
-                <video id="exhibitProject" src="Exhibit Project/Video (1).mp4" autoplay loop muted
-                    disablePictureInPicture></video>
+            <div class="projectContent view">
+                <video id="exhibitProject" src="exhibitproject/video(1).mp4" autoplay loop muted disablePictureInPicture
+                    loading="lazy">Your browser does not support the video tag. Please <a href="exhibitproject/video(1).mp4"> download the video</a> to watch it</video>
                 <div class="projectContentText">
                     <span>Interactive Exhibit Project</span>
                     <span>RAMWC</span>
@@ -64,34 +72,34 @@
                 <div class="cancelBtn"><i class="fa-solid fa-xmark"></i></div>
 
                 <div class="aboutModalContainer">
-                    <p class="aboutModalHeader">About</p>
+                    <p class="aboutModalHeader view">About</p>
                     <div class="aboutModalContent">
-                        <p>Engineering-in-Training</p>
-                        <p>Passionate about biomaterials, systems design, and data science.</p>
-                        <p>Experienced in product design, R & D, and safety compliance.</p>
-                        <p>Enjoys travelling, exploring new cuisines, and taking on creative side projects.</p>
+                        <p class="view">Engineering-in-Training</p>
+                        <p class="view">Passionate about biomaterials, systems design, and data science.</p>
+                        <p class="view">Experienced in product design, R & D, and safety compliance.</p>
+                        <p class="view">Enjoys travelling, exploring new cuisines, and taking on creative side projects.</p>
                     </div>
                 </div>
 
                 <div class="aboutModalContainer">
-                    <p class="aboutModalHeader">Experience</p>
+                    <p class="aboutModalHeader view">Experience</p>
                     <div class="aboutModalContent">
-                        <div class="aboutModalColumnV1">
+                        <div class="aboutModalColumnV1 view">
                             <p>2024</p>
                             <P>Technician, Fike</p>
                             <P>Explosion protection systems</p>
                         </div>
-                        <div class="aboutModalColumnV1">
+                        <div class="aboutModalColumnV1 view">
                             <p>2024</p>
                             <P>Eng Research Assistant, U of M</p>
                             <P>Researched bacteria-detecting biosensors</p>
                         </div>
-                        <div class="aboutModalColumnV1">
+                        <div class="aboutModalColumnV1 view">
                             <p>2022</p>
                             <P>R&D Engineering Intern, Agnora</p>
                             <P>Designed filtration systems</p>
                         </div>
-                        <div class="aboutModalColumnV1">
+                        <div class="aboutModalColumnV1 view">
                             <p>2022</p>
                             <P>Engineering Intern, Linde Canada</p>
                             <P>Safety compliance on acetylene cylinders</p>
@@ -99,11 +107,11 @@
                     </div>
                 </div>
 
-                <div class="contacts">
+                <div class="contacts view">
                     <a href="mailto:olapadedaniel99@gmail.com">Email</a>
                     <a href="https://www.linkedin.com/in/danielolapade/" target="_blank">LinkedIn</a>
                     <a href="https://github.com/danielolapade/" target="_blank">Github</a>
-                    <a href="Resume_Daniel_Olapade.pdf" target="_blank">Résumé</a>
+                    <a href="resume_daniel_olapade.pdf" target="_blank">Résumé</a>
                 </div>
             </div>
 
@@ -137,7 +145,8 @@
                 </div>
 
                 <div class="projectModalContainer view projectModalBannerV1">
-                    <video src="Sports Analysis Project/video (1).mp4" autoplay loop disablePictureInPicture></video>
+                    <video src="sportsanalysisproject/video(1).mp4" autoplay loop disablePictureInPicture controls muted
+                        loading="lazy">Your browser does not support the video tag. Please <a href="sportsanalysisproject/video(1).mp4"> download the video</a> to watch it</video>
                 </div>
 
                 <div class="projectModalContainer projectModalGrid2">
@@ -237,19 +246,19 @@
 
                 <div class="projectModalContainer">
                     <div class="analysisProjectImgs analysisProjectImgsGrid">
-                        <img class="view" src="https://placehold.co/200x200?text=Placeholder">
-                        <img class="view" src="https://placehold.co/200x200?text=Placeholder">
-                        <img class="view" src="https://placehold.co/200x200?text=Placeholder">
-                        <img class="view" src="https://placehold.co/200x200?text=Placeholder">
-                        <img class="view" src="https://placehold.co/200x200?text=Placeholder">
-                        <img class="view" src="https://placehold.co/200x200?text=Placeholder">
-                        <img class="view" src="https://placehold.co/200x200?text=Placeholder">
-                        <img class="view" src="https://placehold.co/200x200?text=Placeholder">
+                        <img loading="lazy" class="view" src="https://placehold.co/200x200?text=Placeholder">
+                        <img loading="lazy" class="view" src="https://placehold.co/200x200?text=Placeholder">
+                        <img loading="lazy" class="view" src="https://placehold.co/200x200?text=Placeholder">
+                        <img loading="lazy" class="view" src="https://placehold.co/200x200?text=Placeholder">
+                        <img loading="lazy" class="view" src="https://placehold.co/200x200?text=Placeholder">
+                        <img loading="lazy" class="view" src="https://placehold.co/200x200?text=Placeholder">
+                        <img loading="lazy" class="view" src="https://placehold.co/200x200?text=Placeholder">
+                        <img loading="lazy" class="view" src="https://placehold.co/200x200?text=Placeholder">
                     </div>
                 </div>
 
                 <div class="projectModalContainer">
-                    <p class="projectModalHeader view">The Good, Bad, and Ugly</p>
+                    <p class="projectModalHeader view">The Good, Bad, & Ugly</p>
                     <div class="projectModalGrid3">
                         <div class="view">
                             <p class="projectModalSubHeader">The Good</p>
@@ -264,7 +273,7 @@
                             <p class="projectModalSubHeader">The Bad</p>
                             <ul>
                                 <li>Poor data quality impacts predictions</li>
-                                <li>Automation complcopyrighty for Non-API sites</li>
+                                <li>Automation complications for Non-API sites</li>
                                 <li>Risk of overfitting AI models to specific scenarios</li>
                             </ul>
                         </div>
@@ -273,7 +282,7 @@
                             <p class="projectModalSubHeader">The Ugly</p>
                             <ul>
                                 <li>Potential risk of encouraging gambling addiction</li>
-                                <li>Varying regional laws can affect sytem use</li>
+                                <li>Varying regional laws can affect system use</li>
                                 <li>Risks of down servers, API changes, or code bugs</li>
                             </ul>
                         </div>
@@ -314,7 +323,6 @@
             </div>
         </div>
 
-
         <div id="biosensorProjectmodal" class="projectModal">
             <div class="cancelBtn"><i class="fa-solid fa-xmark"></i></div>
 
@@ -334,20 +342,18 @@
                             Early detection of bacterial infection in skin wounds is crucial to prevent chronic issues.
                             Current methods for detecting low bacterial concentrations (&lt;1.0 &times; 10<sup>5</sup>
                             CFU/cm<sup>2</sup>) are often slow, invasive, or expensive. Dr. Song’s group developed a
-                            colorimetric nanofibrous biosensor that monitors bacterial levelType in real-time. Using
+                            colorimetric nanofibrous biosensor that monitors bacterial levels in real-time. Using
                             Hemicyanine (HCy) dye, it changes color in response to lipase—an enzyme secreted by bacteria
                             to break down fats and minerals for consumption—enabling early detection before infection
                             begins.
                         </span>
                     </p>
-                    <p class="modalAcknowledgement">
-                        <b>Acknowledgments: </b>
-                        <span>Dr. Song Liu, P.Eng</span>
-                        <span>Farinaz Jonidi Shariatzadeh, PhD</span>
-                    </p>
                     <p class="modalRoleDuration">
                         <span><b>Role: </b>Research Assistant</span>
                         <span><b>Duration: </b>5 Months</span>
+                    </p>
+                    <p class="modalAcknowledgement">
+                        <b>Acknowledgments: </b>Dr. Song Liu, P.Eng, Farinaz Jonidi Shariatzadeh, PhD
                     </p>
                 </div>
             </div>
@@ -399,10 +405,9 @@
             </div>
 
             <div class="projectModalContainer view projectModalCenter  projectModalFooter">
-                <p>For more info visit: <span>
+                <p>Learn more about this project: <span>
                         <a class="modalHeaderContent" href="https://pubs.acs.org/doi/abs/10.1021/acsabm.4c00038"
-                            target="_blank">Ultrasensitive Nanofiber Biosensor - Rapid In Situ Chromatic Detection of
-                            Bacteria for Healthcare Innovation</a></span>
+                            target="_blank">Ultrasensitive Nanofiber Biosensor</a></span>
                 </p>
             </div>
         </div>
@@ -427,15 +432,14 @@
                     The exhibit was designed to present these intricacies in a fun, accessible way to inspire future
                     innovators.
                     </p>
-                    <p class="modalAcknowledgement">
-                        <b>Acknowledgments: </b>
-                        <span>RAMWC</span>
-                        <span>Camryn McMillan (Team member)</span>
-                    </p>
                     <p class="modalRoleDuration">
                         <span><b>Role: </b>Instrumentation and CAD Drafting</span>
                         <span><b>Duration: </b>8 Months</span>
                     </p>
+                    <p class="modalAcknowledgement">
+                        <b>Acknowledgments:</b> RAMWC, Camryn McMillan (Team member)
+                    </p>
+
                 </div>
             </div>
 
@@ -446,8 +450,8 @@
                 </div>
 
                 <div class="view projectModalBannerV1">
-                    <video src="Exhibit Project/Video (1).mp4" controls autoplay loop muted
-                        disablePictureInPicture></video>
+                    <video src="exhibitproject/video(1).mp4" controls autoplay loop muted disablePictureInPicture
+                        loading="lazy">Your browser does not support the video tag. Please <a href="exhibitproject/video(1).mp4"> download the video</a> to watch it</video>
                 </div>
             </div>
 
@@ -503,12 +507,11 @@
 
 
     <footer>
-        <div class="backup-opacity" id="backup">
+        <div class="backup-opacity view" id="backup">
             <a href="#header"><i class="fa-solid fa-angle-up"></i></a>
         </div>
         <div id="footer">
-            <span id="copyright">&copy; 2024 DANIEL OLAPADE</span>
-            <span id="playGame">CLICK TO PLAY DEAD OR WOUNDED</span>
+            <span id="copyright"></span>
         </div>
     </footer>
 
