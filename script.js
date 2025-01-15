@@ -243,4 +243,3 @@ window.addEventListener("blur", () => {
 displayFacts();
 
 document.getElementById('copyright').textContent = `© ${new Date().getFullYear()} DANIEL OLAPADE`;
-// up and down with button??scrolliing
